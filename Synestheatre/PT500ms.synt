@@ -1,0 +1,13 @@
+{
+"rows": 20,
+"cols": 20,
+"name": "PT500ms",
+"hrtf": 1,
+
+"hrtf_angle": 60,"colour_configuration":{
+"boundary_mode":"True",
+"saturation_threshold":1,
+"lightness_thresholds":[],
+"hue_thresholds":[]
+}
+}

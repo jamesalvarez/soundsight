@@ -1,0 +1,16 @@
+{
+"rows": 10,
+"cols": 10,
+"name": "pitchbw",
+"hrtf": 1,
+"hrtf_angle": 60,
+"pitch": 1,
+"pitches": [-200,-100,0,100,200,300,400,500,600,700],
+"colours": 2,"colour_configuration":{
+"bw_mode":"True","bw_level": 0.5,"boundary_mode":"True",
+"saturation_threshold":1,
+"lightness_thresholds":[0.5],
+"hue_thresholds":[] 
+},"colour_timing" : [0,0]
+
+}

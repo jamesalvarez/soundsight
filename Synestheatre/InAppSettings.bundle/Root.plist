@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>Title</key>
+	<string>Settings</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Exponential Loudness</string>
+			<key>Key</key>
+			<string>exponential_loudness</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Maximum Depth Volume</string>
+			<key>Key</key>
+			<string>max_depth_vol</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Orientation</string>
+			<key>Key</key>
+			<string>orientation</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Values</key>
+			<array>
+				<string>landscape</string>
+				<string>portrait</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Landscape</string>
+				<string>Portrait</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Debug Text</string>
+			<key>Key</key>
+			<string>debug_text</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Sensor</string>
+			<key>Key</key>
+			<string>sensor</string>
+			<key>DefaultValue</key>
+			<string>auto</string>
+			<key>Values</key>
+			<array>
+				<string>auto</string>
+				<string>cam</string>
+				<string>structure</string>
+				<string>flir</string>
+				<string>flirmsx</string>
+				<string>file</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Auto</string>
+				<string>Cam</string>
+				<string>Structure</string>
+				<string>Flir Camera</string>
+				<string>Flir MSX</string>
+				<string>Image / Movie</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Default Depth</string>
+			<key>Key</key>
+			<string>default_depth</string>
+			<key>DefaultValue</key>
+			<string>0.0</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Volume Source</string>
+			<key>Key</key>
+			<string>vol_source</string>
+			<key>DefaultValue</key>
+			<string>depth</string>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Depth</string>
+				<string>Luminance</string>
+				<string>Saturation</string>
+				<string>Value</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>none</string>
+				<string>depth</string>
+				<string>luminance</string>
+				<string>saturation</string>
+				<string>value</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Single Finger Pan Gesture</string>
+			<key>Key</key>
+			<string>pan_gesture</string>
+			<key>DefaultValue</key>
+			<string>none</string>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Focus</string>
+				<string>Window</string>
+				<string>Timing</string>
+				<string>Heartbeat</string>
+				<string>Depth Range</string>
+				<string>Closest Depth</string>
+				<string>BW Level</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>none</string>
+				<string>focus</string>
+				<string>window</string>
+				<string>timing</string>
+				<string>heartbeat</string>
+				<string>depth</string>
+				<string>depth_distance</string>
+				<string>bw</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Double Finger Pan Gesture</string>
+			<key>Key</key>
+			<string>two_finger_gesture</string>
+			<key>DefaultValue</key>
+			<string>none</string>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Focus</string>
+				<string>Window</string>
+				<string>Timing</string>
+				<string>Heartbeat</string>
+				<string>Depth Range</string>
+				<string>Closest Depth</string>
+				<string>BW Level</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>none</string>
+				<string>focus</string>
+				<string>window</string>
+				<string>timing</string>
+				<string>heartbeat</string>
+				<string>depth</string>
+				<string>depth_distance</string>
+				<string>bw</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Pinch Gesture</string>
+			<key>Key</key>
+			<string>pinch_gesture</string>
+			<key>DefaultValue</key>
+			<string>none</string>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Focus</string>
+				<string>Window</string>
+				<string>Timing</string>
+				<string>Heartbeat</string>
+				<string>Depth Range</string>
+				<string>Closest Depth</string>
+				<string>BW Level</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>none</string>
+				<string>focus</string>
+				<string>window</string>
+				<string>timing</string>
+				<string>heartbeat</string>
+				<string>depth</string>
+				<string>depth_distance</string>
+				<string>bw</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Depth Delay Mode</string>
+			<key>Key</key>
+			<string>depth_mode</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Horizontal Focus</string>
+			<key>Key</key>
+			<string>horizontal_focus</string>
+			<key>DefaultValue</key>
+			<string>0.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Vertical Focus</string>
+			<key>Key</key>
+			<string>vertical_focus</string>
+			<key>DefaultValue</key>
+			<string>0.0</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Window Height</string>
+			<key>Key</key>
+			<string>window_height</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Window Width</string>
+			<key>Key</key>
+			<string>window_width</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>0.66</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Horizontal Timing Offset</string>
+			<key>Key</key>
+			<string>horizontal_offset</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>0.0</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Vertical Timing Offset</string>
+			<key>Key</key>
+			<string>vertical_offset</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>2500</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>Title</key>
+			<string>Depth Range (mm)</string>
+			<key>Key</key>
+			<string>depth_range</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Closest Depth (mm)</string>
+			<key>Key</key>
+			<string>depth_distance</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>2.0</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>Title</key>
+			<string>Heartbeat Interval (s)</string>
+			<key>Key</key>
+			<string>heartbeat_interval</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>View Mode</string>
+			<key>Key</key>
+			<string>view_mode</string>
+			<key>DefaultValue</key>
+			<string>vr_mode</string>
+			<key>Titles</key>
+			<array>
+				<string>VR Mode</string>
+				<string>Depth &amp; Debug Mode</string>
+				<string>Cam &amp; Debug Mode</string>
+				<string>Depth &amp; Cam Mode</string>
+				<string>None</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>vr_mode</string>
+				<string>depth_mode</string>
+				<string>cam_mode</string>
+				<string>depth_cam_mode</string>
+				<string>none</string>
+			</array>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>single_colour</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Synt file</string>
+			<key>Key</key>
+			<string>synt_name</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>BW Level</string>
+			<key>Key</key>
+			<string>bw_level</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>DefaultValue</key>
+			<string>0.5</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Voice Feedback</string>
+			<key>Key</key>
+			<string>voice_feedback</string>
+			<key>DefaultValue</key>
+			<string>2</string>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Connection Only</string>
+				<string>All</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Reverb - Wet/Dry</string>
+			<key>Key</key>
+			<string>wet-dry</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>DefaultValue</key>
+			<string>50</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Reverb - Preset</string>
+			<key>Key</key>
+			<string>reverb-preset</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

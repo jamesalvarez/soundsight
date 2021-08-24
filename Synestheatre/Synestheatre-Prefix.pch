@@ -1,0 +1,25 @@
+//
+//  Synestheatre-Prefix.pch
+//  Synestheatre
+//
+//  Created by James on 11/08/2016.
+//  Copyright © 2016 James. All rights reserved.
+//
+
+#ifndef Synestheatre_Prefix_pch
+#define Synestheatre_Prefix_pch
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_8_0
+#warning "This project uses features only available in iOS SDK 8.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Toast.h"
+#endif
+
+#endif /* Synestheatre_Prefix_pch */
