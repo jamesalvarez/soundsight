@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "SynestheatreMain.h"
-#import "DebugViews.h"
 
 @interface ParameterController : NSObject
 
 @property (strong, nonatomic)  SynestheatreMain *synestheatreMain;
-@property (strong, nonatomic)  DebugViews *debugViews;
 
 - (void)panGestureStarted:(int)numberOfTouches;
 

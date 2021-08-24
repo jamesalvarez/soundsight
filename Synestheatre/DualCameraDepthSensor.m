@@ -12,6 +12,7 @@
     CameraManager *_cameraManager;
     AVCaptureDepthDataOutput* _depthDataOutput;
     AVCaptureVideoDataOutput* _colourDataOutput;
+    PreviewView* _previewView;
     int _rows;
     int _cols;
     float _heightScale;
@@ -28,11 +29,17 @@
 @synthesize newDataBlock;
 @synthesize updateStatusBlock;
 
+- (id)init {
+    self = [super init];
+    _cameraManager = [[CameraManager alloc] init];
+    return self;
+}
+
 /**
  *  Starts the structure sensor
  */
 -(void)startDepthSensor {
-    _cameraManager = [[CameraManager alloc] init];
+    
     [_cameraManager startDepthSensor:self];
     _depthDataOutput = [_cameraManager depthDataOutput];
     _colourDataOutput = [_cameraManager colourDataOutput];
@@ -304,6 +311,10 @@
 }
 -(NSString*) sensorDisconnectionReason {
     return @"Built in camera error";
+}
+
+-(void)setPreviewView:(PreviewView*)previewView {
+    [_cameraManager setPreviewView:previewView];
 }
 
 @end

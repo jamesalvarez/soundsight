@@ -7,6 +7,7 @@
 //
 
 #import "SettingsTableViewController.h"
+#import "AppDelegate.h"
 
 @implementation SettingsTableViewController
 
@@ -18,4 +19,11 @@
     }
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"settings view controller will appear");
+    [AppDelegate unRestrictOrientation];
+}
+
 @end

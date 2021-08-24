@@ -1,0 +1,32 @@
+{
+"rows": 20,
+"cols": 20,
+"name": "String_Pluck",
+"hrtf": 1,
+"hrtf_angle": 120,
+
+"horizontal_offset": 0.33,
+"vertical_offset": 0.06,
+
+"heartbeat_interval": 6.0,
+
+"depth_range": 1500,
+"depth_distance": 0,
+"default_depth": 0,
+
+"pan_gesture": "none",
+"two_finger_gesture": "none",
+"pinch_gesture": "depth_range",
+
+"colour_configuration":{
+"boundary_mode":"True",
+"saturation_threshold":1,
+"lightness_thresholds":[],
+"hue_thresholds":[]
+},
+"product_identifier" : "com.soundsight.string_pluck",
+"full_name":"String Pluck",
+"short_description":"Vibrations reveal motion, tones reveal shape",
+"description":"Continuously vibrating strings allow you to feel the movement of light, then every couple of seconds they are plucked, revealing the shape of the light. The plucked notes travel from left to right over time, with higher notes indicating lights above, and lower notes indicating lights below the center of the camera. Wave bright objects in front of the camera to feel their movement during the continuous vibration and keep the object still to hear its shape while the strings are plucked."
+}
+

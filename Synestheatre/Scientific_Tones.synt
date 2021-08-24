@@ -1,0 +1,36 @@
+{
+    "rows": 20,
+    "cols": 20,
+    "name": "Scientific_Tones",
+    "hrtf": 1,
+    "hrtf_angle": 120,
+    "colours": 2,
+
+    "horizontal_offset": 0.93,
+    "vertical_offset": 0.07,
+
+    "heartbeat_interval": 1.0,
+
+    "depth_range": 1500,
+    "depth_distance": 0,
+    "default_depth": 0,
+
+    "pan_gesture": "bw",
+    "two_finger_gesture": "none",
+    "pinch_gesture": "depth_range",
+
+    "colour_configuration": {
+        "bw_mode": "True",
+        "bw_level": 0.3,
+        "boundary_mode": "True",
+        "saturation_threshold": 1,
+        "lightness_thresholds": [0.5],
+        "hue_thresholds": []
+    },
+    "colour_timing": [0, 0],
+
+    "product_identifier": "com.soundsight.scientifictones",
+    "full_name": "Scientific Tones",
+    "short_description": "Pure tones rapidly reveal shapes",
+    "description": "The shape of light is rapidly communicated through tones. No fancy bells or whistles, just the most efficient way of turning an image into sound and playing it to you as rapidly as possible. The sound plays from left to right over 1 second, with higher locations denoted through higher pitches. You can raise and lower the threshold at which objects are turned into sound by swiping with a single finger up and down. By having a high threshold and gradually lowering it, you can start by listening to only the brightest objects and slowly bring in other objects to help you understand the image even better. This method is the most like previous auditory sensory substitution devices, and hence is also suitable for scientific comparisons with them. If you want to hear distance or temperature instead of light, please plug in a supported sensor, like the 3 D Occipital Structure Sensor or Flir One thermal cam.When using these external sensors, use pinch gestures on the screen to change how near or hot the objects need to be to be turned into sound."
+}

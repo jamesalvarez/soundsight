@@ -1,0 +1,30 @@
+{
+    "rows": 12,
+    "cols": 1,
+    "name": "Song_Slice_Skylarks",
+    "hrtf": 0,
+
+    "horizontal_offset": 0,
+    "vertical_offset": 0,
+
+    "heartbeat_interval": 16.0,
+
+    "depth_range": 1500,
+    "depth_distance": 0,
+    "default_depth": 0,
+
+    "pan_gesture": "none",
+    "two_finger_gesture": "none",
+    "pinch_gesture": "depth_range",
+
+    "colour_configuration": {
+        "boundary_mode": "True",
+        "saturation_threshold": 1,
+        "lightness_thresholds": [],
+        "hue_thresholds": []
+    },
+    "product_identifier": "com.soundsight.skylarks",
+    "full_name": "Song Slice Skylarks",
+    "short_description": "Musical track stacked in a central column",
+    "description": "Chill out with some more beach tunes! A central vertical slice of the camera feed controls all the instruments that together make a chill beach song. Piano melodies are at the top of the slice, while synth, birds, and beach waves control the middle, and finally rhythmic beats are at the bottom. Sweep the camera across a scene to see what musical sounds they trigger. Works best with the plugin 3D Occipital Structure Sensor, when you use that, just sweep the sensor left and right to indicate the presence of nearby objects with music! If you want to hear distance or temperature instead of light, please plug in a supported sensor, like the 3D Occipital Structure Sensor or Flir One thermal cam. When using these external sensors, use pinch gestures on the screen to change how near or hot the objects need to be to be turned into sound."
+}

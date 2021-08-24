@@ -51,6 +51,8 @@
  */
 @interface SynestheatreMain : NSObject
 
+@property (nonatomic, readwrite) bool landscapeMode;
+
 @property (nonatomic, readwrite) Configuration* config;
 
 /**
@@ -145,11 +147,6 @@
  *  @param lightness level (0 - 1)
  */
 - (void)setBwLevel:(float)lightness;
-
-/**
- *  Switches to next configuration
- */
-- (NSString*)switchConfiguration;
 
 - (UIImage*)colourDebugImage;
 

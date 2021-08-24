@@ -1,0 +1,35 @@
+{
+"rows": 1,
+"cols": 1,
+"name": "Colour_Orchestra",
+
+"hrtf": 0,
+
+"horizontal_offset": 0,
+"vertical_offset": 0,
+
+"heartbeat_interval": 4.0,
+
+"vol_source": "none",
+
+"pan_gesture": "none",
+"two_finger_gesture": "none",
+"pinch_gesture": "none",
+
+"orientation" : "landscape",
+"colours": 7,
+"colour_configuration":{
+"boundary_mode":"False",
+"saturation_threshold":0.2,
+"lightness_thresholds":[0.4,0.7],
+"hue_thresholds":[0.01,0.15,0.35,0.67]
+},
+"reverb_configuration":{
+"wet_dry":50,
+"preset":8
+},
+"product_identifier" : "com.soundsight.colour_orchestra",
+"full_name":"Colour Orchestra",
+"short_description":"Central colour generates mood-inducing sounds",
+"description":"Learn the language of colour by turning it into emotionally similar sounds – hear the central colour of your camera orchestrate a live mix of crackling white, noisey grey, bassy black, buzzy red, bright yellow, orchestral green, and aqua blue. Sweep your camera over colourful objects and hear what emotional sounds they give off."
+}

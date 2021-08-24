@@ -433,5 +433,8 @@
     return @"";
 }
 
+-(void)setPreviewView:(PreviewView*)previewView {
+    [_cameraManager setPreviewView:previewView];
+}
 
 @end

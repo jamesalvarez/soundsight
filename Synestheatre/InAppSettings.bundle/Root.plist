@@ -34,36 +34,6 @@
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
-			<string>Orientation</string>
-			<key>Key</key>
-			<string>orientation</string>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>Values</key>
-			<array>
-				<string>landscape</string>
-				<string>portrait</string>
-			</array>
-			<key>Titles</key>
-			<array>
-				<string>Landscape</string>
-				<string>Portrait</string>
-			</array>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Debug Text</string>
-			<key>Key</key>
-			<string>debug_text</string>
-			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
 			<string>Sensor</string>
 			<key>Key</key>
 			<string>sensor</string>
@@ -74,18 +44,12 @@
 				<string>auto</string>
 				<string>cam</string>
 				<string>structure</string>
-				<string>flir</string>
-				<string>flirmsx</string>
-				<string>file</string>
 			</array>
 			<key>Titles</key>
 			<array>
 				<string>Auto</string>
 				<string>Cam</string>
 				<string>Structure</string>
-				<string>Flir Camera</string>
-				<string>Flir MSX</string>
-				<string>Image / Movie</string>
 			</array>
 		</dict>
 		<dict>

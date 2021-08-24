@@ -41,11 +41,10 @@ return false;
     _colours = 0;
     _defaultDepth = 0.0;
     _volSource = @"depth";
-    _orientation = @"landscape";
     _colourTimings = @[];
     _exponentialLoudness = false;
     _maxDepthVolume = 0.0f;
-    
+    _locked = true;
     // this is the setup for one colour
     _colourConfiguration.boundary_mode = false;
     _colourConfiguration.saturation_threshold = 1;
@@ -75,7 +74,6 @@ return false;
     _volSource = [defaults stringForKey:@"vol_source"];
     _defaultDepth = [defaults floatForKey:@"default_depth"];
     _exponentialLoudness = [defaults floatForKey:@"exponential_loudness"];
-    _orientation = [defaults stringForKey:@"orientation"];
     _maxDepthVolume = [defaults floatForKey:@"max_depth_vol"];
 
     
@@ -123,10 +121,13 @@ return false;
     // integerValue evaluates to 0 if not a valid integer
     _rows = (int)[rowString integerValue];
     _cols = (int)[colString integerValue];
-    _name = nameString;
+    _name = _syntJsonDic[@"full_name"];
+    _descriptionText = _syntJsonDic[@"description"];
+    _shortDescriptionText = _syntJsonDic[@"short_description"];
+    _productIdentifier = _syntJsonDic[@"product_identifier"];
     
     // Check non optional fields are valid
-    validFormat = _rows > 0 && _cols > 0 && [_name length] > 0;
+    validFormat = _rows > 0 && _cols > 0 && [nameString length] > 0;
     if (!validFormat) { SYNTCONFIGERROR(@"Config file does not have valid row/col/name entries.");}
     
     // Check sound files directory exists
@@ -265,7 +266,6 @@ return false;
     NSString* vol_source = _syntJsonDic[@"vol_source"];
     NSString* default_depth = _syntJsonDic[@"default_depth"];
     NSString* exponential_loudness = _syntJsonDic[@"exponential_loudness"];
-    NSString* orientation = _syntJsonDic[@"orientation"];
     NSString* max_depth_vol = _syntJsonDic[@"max_depth_vol"];
     
     if (horizontal_focus != nil){
@@ -348,12 +348,6 @@ return false;
         _exponentialLoudness = [exponential_loudness boolValue];
     }
     
-
-    if (orientation != nil) {
-        NSLog(@"Overwriting orientation");
-        _orientation = orientation;
-    }
-
     if (max_depth_vol != nil) {
         NSLog(@"Over writing max deoth vol");
         _maxDepthVolume = [max_depth_vol floatValue];
@@ -496,7 +490,6 @@ return false;
     jsonDic[@"depth_mode"] = @(_depthMode);
     jsonDic[@"default_depth"] = @(_defaultDepth);
     jsonDic[@"exponential_loudness"] = @(_exponentialLoudness);
-    jsonDic[@"orientation"] = _orientation;
     jsonDic[@"max_depth_vol"] = @(_maxDepthVolume);
     
     if (_panGesture)

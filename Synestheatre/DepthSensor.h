@@ -7,6 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "PreviewView.h"
 
 #ifndef _INCL_GUARD_COLOUR
 #define _INCL_GUARD_COLOUR
@@ -55,14 +56,12 @@ static const Colour ColourBlack = {0,0,0};
 
 
 /**
- *  Coloured UIImage of depth data from the sensor
- *
- *  @return UIImage
+ *  Sets the preview view to output the sensors preview stream
  */
--(UIImage*)getSensorImage;
+-(void)setPreviewView:(PreviewView*)previewView;
 
-/*
- **  @param rows        number of rows
+/**
+ *  @param rows        number of rows
  *  @param cols        number of columns
  *  @param heightScale height of sub window within (1.0 for full height)
  *  @param widthScale  width of sub window within (1.0 for full width)
@@ -82,13 +81,6 @@ static const Colour ColourBlack = {0,0,0};
  *  @param outArray    colors
  */
 -(bool)getColours:(Colour*)outArray;
-
-/**
- *  Coloured UIImage of colour data
- *
- *  @return UIImage
- */
--(UIImage*)getColourImage;
 
 -(NSString*) getCentreDebugInfo;
 

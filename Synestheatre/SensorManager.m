@@ -10,8 +10,6 @@
 
 #import "StructureSensorDepthSensor.h"
 #import "DualCameraDepthSensor.h"
-#import "FlirOneDepthSensor.h"
-#import "FileDepthSensor.h"
 #import "SynestheatreMain.h"
 #import "DepthSensor.h"
 #import <ExternalAccessory/ExternalAccessory.h>
@@ -42,15 +40,7 @@
         depthSensor = [[DualCameraDepthSensor alloc] init];
     } else if ([sensorType isEqualToString:@"structure"]){
         depthSensor = [[StructureSensorDepthSensor alloc] init];
-    } else if ([sensorType isEqualToString:@"flir"]) {
-        FlirOneDepthSensor* flir = [[FlirOneDepthSensor alloc] initWithMSX:false];
-        depthSensor = flir;
-    } else if ([sensorType isEqualToString:@"flirmsx"]) {
-        FlirOneDepthSensor* flir = [[FlirOneDepthSensor alloc] initWithMSX:true];
-        depthSensor = flir;
-    } else if ([sensorType isEqualToString:@"file"]){
-        depthSensor = [[FileDepthSensor alloc] init];
-    } else { // auto mode is default
+    }  else { // auto mode is default
         depthSensor = [self getAutoSensor];
     }
         
@@ -77,10 +67,6 @@
     
     if ([[accessory name] isEqualToString:@"Structure Sensor"]) {
         return [[StructureSensorDepthSensor alloc] init];
-    }
-    
-    if ([[accessory name] isEqualToString:@"FLIR ONE Camera"]) {
-        return [[FlirOneDepthSensor alloc] init];
     }
     
     // Fail safe

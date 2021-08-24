@@ -7,9 +7,8 @@
 //
 
 #import "SynestheatreMain.h"
-#import "ConfigurationLoader.h"
+#import "ConfigurationManager.h"
 #import "ColourSpaceUtilities.h"
-#import "DebugViews.h"
 #include <math.h>
 
 #include <math.h>
@@ -23,7 +22,7 @@ float difangrad(float x, float y)
     return fabs(arg);
 }
 
-#define LANDSCAPED_INDEX landscapeMode ? (row * _config.cols) + col : ((_config.cols - 1 - col) * _config.rows) + row
+#define LANDSCAPED_INDEX _landscapeMode ? (row * _config.cols) + col : ((_config.cols - 1 - col) * _config.rows) + row
 
 #define MAX3(x,y,z) ( MAX(x,MAX(y,z)) )
 #define MIN3(x,y,z) ( MIN(x,MIN(y,z)) )
@@ -34,7 +33,7 @@ float difangrad(float x, float y)
     
     AudioController *_audioController;
     id<DepthSensor> _depthSensor;
-    ConfigurationLoader *_configurationLoader;
+    ConfigurationManager *_ConfigurationManager;
     
     NSTimer* _heartbeat;
     NSTimer* _sensorConnectedDetection;
@@ -44,7 +43,6 @@ float difangrad(float x, float y)
     bool _pause;
     bool _hasDepthData;
     bool _hasColourData;
-    bool _sendCentreColourDebugInfo;
     
     UIImage* _depthImage;
     UIImage* _debugImage;
@@ -66,12 +64,11 @@ float difangrad(float x, float y)
     _pause = true;
     _changedHeartbeat = false;
     _hasDepthData = false;
-    _sendCentreColourDebugInfo = true;
     
     // Initialize and load a configuration
-    _configurationLoader = [[ConfigurationLoader alloc] init];
+    _ConfigurationManager = [ConfigurationManager sharedInstance];
     
-    if (_configurationLoader == nil ) {
+    if (_ConfigurationManager == nil ) {
         NSLog(@"Could not find any configs");
         return nil;
     }
@@ -124,27 +121,22 @@ float difangrad(float x, float y)
 
 - (bool)reloadConfig {
     
-    NSLog(@"Reload config");
+    NSLog(@"Reload config - %@", _ConfigurationManager.currentConfig.name);
     
     _pause = true;
-    _sendCentreColourDebugInfo = [[NSUserDefaults standardUserDefaults] boolForKey:@"debug_text"];
     [_audioController stop];
 
-    NSError* error = nil;
+    //NSError* error = nil;
     
-    _config = [_configurationLoader loadConfigurationError:&error];
-    if (error) {
-        [Toast makeToast:[error localizedDescription]];
-        return false;
-    }
+    _config = _ConfigurationManager.currentConfig;
+
+    
     
     free(_depthData);
     free(_colourData);
-
+    
     _depthData = (float*)malloc(sizeof(float) * _config.rows * _config.cols);
     _colourData = (Colour*)malloc(sizeof(Colour) * _config.rows * _config.cols);
-    
-    
     
     [self setDepthSensorValues];
     
@@ -159,7 +151,7 @@ float difangrad(float x, float y)
     
     if ([[[NSUserDefaults standardUserDefaults]stringForKey:@"voice_feedback"] integerValue] > 0) {
         NSString* utterance = [NSString stringWithFormat:@"Loaded %@ with %@",
-                               [_configurationLoader currentConfig],
+                               _ConfigurationManager.currentConfig.name,
                                [_depthSensor getSensorType]];
         
         [[NSNotificationCenter defaultCenter] postNotificationName: @"SaySomething" object: utterance];
@@ -171,9 +163,9 @@ float difangrad(float x, float y)
 }
 
 -(void)setDepthSensorValues {
-    bool landscapeMode = ![_config.orientation isEqualToString:@"portrait"];
     
-    if (landscapeMode) {
+    
+    if (_landscapeMode) {
         [_depthSensor setViewWindowWithRows:_config.rows cols:_config.cols heightScale:_config.depthDataWindowHeight widthScale:_config.depthDataWindowWidth];
     } else {
         [_depthSensor setViewWindowWithRows:_config.cols cols:_config.rows heightScale:_config.depthDataWindowWidth widthScale:_config.depthDataWindowHeight];
@@ -316,10 +308,6 @@ float difangrad(float x, float y)
     
     [self updateDelays];
     
-    if (_sendCentreColourDebugInfo) {
-        [self sendCentreColourDebugInfo];
-    }
-    
     if (_changedHeartbeat) {
         _changedHeartbeat = false;
         [self restartHeartbeat];
@@ -403,7 +391,6 @@ float difangrad(float x, float y)
     float maxDepth = _config.depthRange + _config.depthDistance;
     float maxDepthVol = _config.maxDepthVolume;
     bool exponentialLoudness = _config.exponentialLoudness;
-    bool landscapeMode = ![_config.orientation isEqualToString:@"portrait"];
     
     if([_config.volSource isEqualToString:@"depth"]){
         for(int row = 0; row < _config.rows; ++row) {
@@ -450,7 +437,7 @@ float difangrad(float x, float y)
         for(int row = 0; row < _config.rows; ++row) {
             for(int col = 0; col < _config.cols; ++col) {
                 
-                int index = landscapeMode ? (row * _config.cols) + col : ((_config.cols - 1 - col) * _config.rows) + row;
+                int index = _landscapeMode ? (row * _config.cols) + col : ((_config.cols - 1 - col) * _config.rows) + row;
                 
                 Colour thisColour = _hasColourData ? _colourData[index] : ColourBlack;
                 
@@ -689,13 +676,6 @@ float difangrad(float x, float y)
     
 }
 
-- (NSString*)switchConfiguration {
-    if (_pause) return [_configurationLoader currentConfig];
-    NSString* configName = [_configurationLoader cycleConfig];
-    [self reloadConfig];
-    return configName;
-}
-
 - (UIImage*)colourDebugImage {
     
     return nil;
@@ -736,64 +716,5 @@ float difangrad(float x, float y)
     return newImage;*/
 }
 
--(void) sendCentreColourDebugInfo {
-    
-    if (!_colourData) {
-        [DebugViews.sharedManager displayCentreColour:nil];
-        [DebugViews.sharedManager displaySynestheatreConsoleText:@"No colour data streamed!"];
-    };
-    
-    // get centre pixel
-    int row = _config.rows / 2;
-    int col = _config.cols / 2;
-    
-    int index = (row * _config.cols) + col;
-    
-    Colour c = _colourData[index];
-    
-    float r = c.r;
-    float g = c.g;
-    float b = c.b;
-    
-    
-    CGSize size = CGSizeMake(20, 20);
-    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
-    [[UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0] setFill];
-    UIRectFill(CGRectMake(0, 0, size.width, size.height));
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    float H;
-    float S;
-    float L;
-    
-    RGB2HSL(r, g, b, &H, &S, &L);
-    
-    float* c_volumes = (float*)calloc(_config.colours,sizeof(float));
-    [self getVolumesForPixel:c volumes:c_volumes];
-    
-    NSString* d = [NSString stringWithFormat:@"H: %.02f, S: %.02f, L: %.02f",H,S,L];
-    
-    for(int i = 0; i < _config.colours; i += 1) {
-        d  = [d stringByAppendingString: [NSString stringWithFormat:@", %.01f", c_volumes[i]]];
-    }
-    
-    free(c_volumes);
-    
-    [DebugViews.sharedManager displayCentreColour:image];
-    [DebugViews.sharedManager displaySynestheatreConsoleText:d];
-    
-    NSString* sensorInfo = [_depthSensor getCentreDebugInfo];
-    
-    if (_hasDepthData) {
-        float minDepth = _config.depthDistance;
-        float maxDepth = _config.depthRange + _config.depthDistance;
-        float depth = MAX(MIN(maxDepth, _depthData[index]),minDepth);
-        float depthRatio = 1 - ((depth - minDepth) / _config.depthRange);
-        sensorInfo = [sensorInfo stringByAppendingFormat:@" | vol: %.2f",depthRatio];
-    }
-    
-    [DebugViews.sharedManager displaySensorConsoleText: sensorInfo];
-}
 
 @end

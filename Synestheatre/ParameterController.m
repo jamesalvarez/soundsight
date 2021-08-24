@@ -148,13 +148,9 @@ typedef struct UIVariables {
     }
     
     if (feedback != nil) {
-        [_debugViews displaySensorConsoleText:feedback];
-        
         if ([[[NSUserDefaults standardUserDefaults]stringForKey:@"voice_feedback"] integerValue] > 1) {
             [self queueVoiceUpdate:feedback];
         }
-        
-        
     }
 }
 
@@ -200,8 +196,6 @@ typedef struct UIVariables {
     [self changeValueForGestureCode:[[_synestheatreMain config] pinchGesture] forTranslation:percentage];
 }
 
-- (void)doubleTap {
-    [_synestheatreMain switchConfiguration];
-}
+- (void)doubleTap {}
 
 @end

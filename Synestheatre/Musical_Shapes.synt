@@ -1,0 +1,32 @@
+{
+"rows": 20,
+"cols": 20,
+"name": "Musical_Shapes",
+"hrtf": 1,
+"hrtf_angle": 120,
+
+"horizontal_offset": 0.93,
+"vertical_offset": 0.07,
+
+"heartbeat_interval": 2.0,
+
+"depth_range": 1500,
+"depth_distance": 0,
+"default_depth": 0,
+
+"pan_gesture": "none",
+"two_finger_gesture": "none",
+"pinch_gesture": "depth_range",
+
+"colour_configuration":{
+"boundary_mode":"True",
+"saturation_threshold":1,
+"lightness_thresholds":[],
+"hue_thresholds":[]
+},
+"product_identifier" : "com.soundsight.musical_shapes",
+"full_name":"Musical Shapes",
+"short_description":"Shapes played via different instruments",
+"description":"Feel shapes played through musical scales. It’s as if the visual image was put on some musical notation paper and played as music! The sound plays from left to right over time with higher locations playing higher pitches. Different pitches are also played by different instruments, with plucked harps at the top, then flutes, xylophones, horns, and finally a bass at the bottom. Using the camera, try listening to bright shapes on dark backgrounds to hear the notes and instruments shift up and down."
+}
+

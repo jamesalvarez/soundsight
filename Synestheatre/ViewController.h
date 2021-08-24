@@ -11,8 +11,7 @@
 #import "GestureController.h"
 #import "TransparentLabelView.h"
 #import "ParameterController.h"
-#import "DebugViews.h"
-
+#import "InAppSettingsKit/IASKAppSettingsViewController.h"
 
 @class GestureController;
 @class ParameterController;
@@ -20,8 +19,12 @@
 /**
  *  Creates the Synestheatre and controls interactions with it
  */
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController <IASKSettingsDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *dragModeButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet UIImageView* leftImageView;
 /**
  *  Class to control user gestures
  */
@@ -48,5 +51,6 @@
 - (void)restartEngine;
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
+
 
 @end

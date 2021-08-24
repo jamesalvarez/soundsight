@@ -7,10 +7,10 @@
 //
 
 #import "ParameterController.h"
-#import "ViewController.h"
+#import "MainViewController.h"
 #import <Foundation/Foundation.h>
 
-@class ViewController;
+@class MainViewController;
 @class ParameterController;
 
 /**
@@ -21,7 +21,7 @@
 /**
  *  Main view controller
  */
-@property (strong, nonatomic) IBOutlet ViewController *viewControler;
+@property (strong, nonatomic) IBOutlet MainViewController *viewControler;
 
 /**
  *  Single finger pans adjust heartbeat rate

@@ -14,6 +14,7 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
 }
 
 @interface CameraManager () {
+    PreviewView *_previewView;
     AVCaptureSession *_captureSession;
     AVCaptureDevice *_captureDevice;
     AVCaptureDataOutputSynchronizer *_synchronizer;
@@ -24,7 +25,9 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
 
 @implementation CameraManager
 
-
+-(void)setPreviewView:(PreviewView*)previewView {
+    _previewView = previewView;
+}
 
 -(void) startColorCamera: (id<AVCaptureVideoDataOutputSampleBufferDelegate>) delegate
 {
@@ -133,7 +136,10 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
         [_captureDevice unlockForConfiguration];
     }
     
+    
     [_captureSession commitConfiguration];
+    
+    [_previewView setSession:_captureSession];
     
     // then start everything
     [_captureSession startRunning];
@@ -167,9 +173,7 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
     
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
                      completionHandler:^(BOOL granted) {
-                         if (granted) {
-                             [[NSNotificationCenter defaultCenter] postNotificationName:@"RestartEngine" object:self];
-                         } else {
+                         if (!granted) {
                              NSLog(@"User denied camera access!");
                              [Toast makeToast:@"Needs camera permission!"];
                          }

@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreImage/CoreImage.h>
 #import <GLKit/GLKit.h>
+#import "PreviewView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,9 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)startDepthSensor: (id<AVCaptureDepthDataOutputDelegate,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureDataOutputSynchronizerDelegate>) delegate;
 - (void) stopDepthSensor;
 - (bool) connected;
+-(void)setPreviewView:(PreviewView*)previewView;
 
 + (bool)queryCameraAuthorizationStatusAndNotifyUserIfNotGranted;
 + (CGImageRef) imageFromSampleBuffer: (CMSampleBufferRef)sampleBuffer;
+
 @end
 
 NS_ASSUME_NONNULL_END

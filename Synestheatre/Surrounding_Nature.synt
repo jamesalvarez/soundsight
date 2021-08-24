@@ -1,0 +1,31 @@
+{
+"rows": 10,
+"cols": 10,
+"name": "Surrounding_Nature",
+"hrtf": 0,
+
+"horizontal_offset": 0.00,
+"vertical_offset": 0.00,
+
+"heartbeat_interval": 14.0,
+
+"depth_range": 1500,
+"depth_distance": 0,
+"default_depth": 0,
+
+"pan_gesture": "none",
+"two_finger_gesture": "none",
+"pinch_gesture": "depth_range",
+
+"colour_configuration":{
+"boundary_mode":"True",
+"saturation_threshold":1,
+"lightness_thresholds":[],
+"hue_thresholds":[]
+},
+"product_identifier" : "com.soundsight.surrounding_nature",
+"full_name":"Surrounding Nature",
+"short_description":"Central buzz with natural sounds on the sides",
+"description":"The centre of the camera plays intense tones, while the periphery plays relaxing sounds from nature. Use the central tones to identify the when you are pointing the camera directly at objects that are bright, near, or hot, based on whether you are using a camera, 3D sensor, or thermal cam."
+}
+
