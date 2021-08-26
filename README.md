@@ -1,7 +1,7 @@
 # Soundsight
 An iOS app to help users navigate the world by turning depth information into pleasant sounds.
 
-Made by [Giles Hamilton-Fletcher]([Giles Hamilton-Fletcher](https://twitter.com/Gilouxy) at NYU Langone Health) at NYU Langone Health, [Jamie Ward](https://profiles.sussex.ac.uk/p92444-jamie-ward) and [James Alvarez](https://jamesalvarez.co.uk/) at the University of Sussex.
+Made by [Giles Hamilton-Fletcher](https://twitter.com/Gilouxy) at NYU Langone Health, [Jamie Ward](https://profiles.sussex.ac.uk/p92444-jamie-ward) and [James Alvarez](https://jamesalvarez.co.uk/) at the University of Sussex.
 
 # Research background
 This visual-to-audio sensory substitution App was originally developed under the name 'Synaestheatre.' Research with persons who are blind or visually-impaired indicated that the responsivity, aesthetics, and use of depth information was well received by potential end users [1]. A more detailed understanding of the technical features of the App can be found in our SoundSight publication [2]. 
