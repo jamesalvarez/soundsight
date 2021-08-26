@@ -1,7 +1,7 @@
 # Soundsight
 An iOS app to help users navigate the world by turning depth information into pleasant sounds.
 
-Made by [Gile Hamilton-Fletcher](https://www.linkedin.com/in/giles-hamilton-fletcher-808a5335/) at NYU Langone Health, [Jamie Ward](https://profiles.sussex.ac.uk/p92444-jamie-ward) and [James Alvarez](https://jamesalvarez.co.uk/) at the Unversity of Sussex.
+Made by [Giles Hamilton-Fletcher]([Giles Hamilton-Fletcher](https://twitter.com/Gilouxy) at NYU Langone Health) at NYU Langone Health, [Jamie Ward](https://profiles.sussex.ac.uk/p92444-jamie-ward) and [James Alvarez](https://jamesalvarez.co.uk/) at the University of Sussex.
 
 ## Getting started
 
