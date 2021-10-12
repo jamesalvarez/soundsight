@@ -12,7 +12,6 @@
 		1A19C9B71D64679D007EB649 /* StructureSensorDepthSensor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1A19C9B61D64679D007EB649 /* StructureSensorDepthSensor.mm */; };
 		1A1EE7531E7AAA8600D4F8B9 /* TransparentLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1EE7521E7AAA8600D4F8B9 /* TransparentLabelView.m */; };
 		1A23C1AE21E78C0400E0CDBA /* FlirOneDepthSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C1AD21E78C0400E0CDBA /* FlirOneDepthSensor.m */; };
-		1A23C1B021E89C7800E0CDBA /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A23C1AF21E89C7800E0CDBA /* opencv2.framework */; };
 		1A23C1B921F0E7DB00E0CDBA /* SensorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */; };
 		1A310DA921EF89DA00753192 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A310DA821EF89DA00753192 /* AssetsLibrary.framework */; };
 		1A3573582204567D00FFEFB8 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3573572204567D00FFEFB8 /* CameraManager.m */; };
@@ -55,11 +54,12 @@
 		1A64C6B82244EF290088970C /* MLBDirectoryContentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64C6AF2244EF290088970C /* MLBDirectoryContentsTableViewController.m */; };
 		1A64C6B92244EF290088970C /* SandboxerResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A64C6B02244EF290088970C /* SandboxerResources.bundle */; };
 		1A688A11211E0A44005E6E34 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A688A10211E0A44005E6E34 /* Configuration.m */; };
-		1A72F6BA2297F7B3004016AE /* FLIROneSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A72F6B92297F7B3004016AE /* FLIROneSDK.framework */; };
 		1A7BBC5F1D953A71001E45E0 /* ConfigurationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BBC5E1D953A71001E45E0 /* ConfigurationLoader.m */; };
 		1AA6E9AB1D82209B0093756B /* SyntCoreAudio.c in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6E9A91D82209B0093756B /* SyntCoreAudio.c */; };
 		1AB2252722E1E2E600A6087D /* pitchbw in Resources */ = {isa = PBXBuildFile; fileRef = 1AB2252622E1E2E600A6087D /* pitchbw */; };
 		1AB2252922E1E33200A6087D /* pitchbw.synt in Resources */ = {isa = PBXBuildFile; fileRef = 1AB2252822E1E33200A6087D /* pitchbw.synt */; };
+		1AB4FA3B2715CE0D0004A762 /* FLIROneSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB4FA3A2715CE0D0004A762 /* FLIROneSDK.framework */; };
+		1AB4FA3D2715CE560004A762 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB4FA3C2715CE560004A762 /* opencv2.framework */; };
 		1AB734D622243CF3009DE78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB734D522243CF3009DE78F /* LaunchScreen.storyboard */; };
 		1AB734DA22244546009DE78F /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 1AB734D922244546009DE78F /* AppIcon.appiconset */; };
 		1AB9D4BE23E1AB2400FDFFF0 /* single_colour.synt in Resources */ = {isa = PBXBuildFile; fileRef = 1AB9D4BC23E1AB2400FDFFF0 /* single_colour.synt */; };
@@ -90,7 +90,6 @@
 		1A1EE7521E7AAA8600D4F8B9 /* TransparentLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentLabelView.m; sourceTree = "<group>"; };
 		1A23C1AC21E78C0400E0CDBA /* FlirOneDepthSensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlirOneDepthSensor.h; sourceTree = "<group>"; };
 		1A23C1AD21E78C0400E0CDBA /* FlirOneDepthSensor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlirOneDepthSensor.m; sourceTree = "<group>"; };
-		1A23C1AF21E89C7800E0CDBA /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Synestheatre/opencv2.framework; sourceTree = "<group>"; };
 		1A23C1B721F0E7DB00E0CDBA /* SensorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorManager.h; sourceTree = "<group>"; };
 		1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorManager.m; sourceTree = "<group>"; };
 		1A310DA821EF89DA00753192 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -161,13 +160,14 @@
 		1A688A10211E0A44005E6E34 /* Configuration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		1A688A1621219065005E6E34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A6DCB9E216E264400B7C294 /* ColourSpaceUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColourSpaceUtilities.h; sourceTree = "<group>"; };
-		1A72F6B92297F7B3004016AE /* FLIROneSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLIROneSDK.framework; sourceTree = "<group>"; };
 		1A7BBC5D1D953A71001E45E0 /* ConfigurationLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationLoader.h; sourceTree = "<group>"; };
 		1A7BBC5E1D953A71001E45E0 /* ConfigurationLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationLoader.m; sourceTree = "<group>"; };
 		1AA6E9A91D82209B0093756B /* SyntCoreAudio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SyntCoreAudio.c; sourceTree = "<group>"; };
 		1AA6E9AA1D82209B0093756B /* SyntCoreAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntCoreAudio.h; sourceTree = "<group>"; };
 		1AB2252622E1E2E600A6087D /* pitchbw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pitchbw; sourceTree = "<group>"; };
 		1AB2252822E1E33200A6087D /* pitchbw.synt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pitchbw.synt; sourceTree = "<group>"; };
+		1AB4FA3A2715CE0D0004A762 /* FLIROneSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLIROneSDK.framework; path = Synestheatre/Frameworks/FLIROneSDK.framework; sourceTree = "<group>"; };
+		1AB4FA3C2715CE560004A762 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Synestheatre/Frameworks/opencv2.framework; sourceTree = "<group>"; };
 		1AB734D522243CF3009DE78F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AB734D922244546009DE78F /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		1AB9D4BC23E1AB2400FDFFF0 /* single_colour.synt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = single_colour.synt; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				1A3D33041D5C8503000BB2C5 /* CoreMotion.framework in Frameworks */,
 				1A3D330A1D5C8503000BB2C5 /* QuartzCore.framework in Frameworks */,
 				1A3D33061D5C8503000BB2C5 /* Foundation.framework in Frameworks */,
-				1A23C1B021E89C7800E0CDBA /* opencv2.framework in Frameworks */,
+				1AB4FA3D2715CE560004A762 /* opencv2.framework in Frameworks */,
 				1A3D33001D5C8503000BB2C5 /* AVFoundation.framework in Frameworks */,
 				1A3D32FF1D5C8503000BB2C5 /* Accelerate.framework in Frameworks */,
 				1A3D33091D5C8503000BB2C5 /* OpenGLES.framework in Frameworks */,
@@ -217,8 +217,8 @@
 				1A3D33011D5C8503000BB2C5 /* CoreGraphics.framework in Frameworks */,
 				1A3D33021D5C8503000BB2C5 /* CoreImage.framework in Frameworks */,
 				1A3D330B1D5C8503000BB2C5 /* UIKit.framework in Frameworks */,
-				1A72F6BA2297F7B3004016AE /* FLIROneSDK.framework in Frameworks */,
 				1A3D33051D5C8503000BB2C5 /* ExternalAccessory.framework in Frameworks */,
+				1AB4FA3B2715CE0D0004A762 /* FLIROneSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,8 +370,8 @@
 		1A3D33121D5C85A1000BB2C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A72F6B92297F7B3004016AE /* FLIROneSDK.framework */,
-				1A23C1AF21E89C7800E0CDBA /* opencv2.framework */,
+				1AB4FA3A2715CE0D0004A762 /* FLIROneSDK.framework */,
+				1AB4FA3C2715CE560004A762 /* opencv2.framework */,
 				1A310DA821EF89DA00753192 /* AssetsLibrary.framework */,
 				1ABAFC8520F4C8A1000B8B28 /* InAppSettingsKit.framework */,
 				1AD1AF2B1D82257400698CD8 /* CoreAudio.framework */,
