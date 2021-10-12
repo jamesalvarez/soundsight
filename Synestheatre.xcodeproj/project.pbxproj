@@ -60,6 +60,7 @@
 		1AB2252922E1E33200A6087D /* pitchbw.synt in Resources */ = {isa = PBXBuildFile; fileRef = 1AB2252822E1E33200A6087D /* pitchbw.synt */; };
 		1AB4FA3B2715CE0D0004A762 /* FLIROneSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB4FA3A2715CE0D0004A762 /* FLIROneSDK.framework */; };
 		1AB4FA3D2715CE560004A762 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB4FA3C2715CE560004A762 /* opencv2.framework */; };
+		1AB4FA402715D4450004A762 /* ARKitDepthSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4FA3F2715D4450004A762 /* ARKitDepthSensor.swift */; };
 		1AB734D622243CF3009DE78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB734D522243CF3009DE78F /* LaunchScreen.storyboard */; };
 		1AB734DA22244546009DE78F /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 1AB734D922244546009DE78F /* AppIcon.appiconset */; };
 		1AB9D4BE23E1AB2400FDFFF0 /* single_colour.synt in Resources */ = {isa = PBXBuildFile; fileRef = 1AB9D4BC23E1AB2400FDFFF0 /* single_colour.synt */; };
@@ -168,6 +169,8 @@
 		1AB2252822E1E33200A6087D /* pitchbw.synt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pitchbw.synt; sourceTree = "<group>"; };
 		1AB4FA3A2715CE0D0004A762 /* FLIROneSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLIROneSDK.framework; path = Synestheatre/Frameworks/FLIROneSDK.framework; sourceTree = "<group>"; };
 		1AB4FA3C2715CE560004A762 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Synestheatre/Frameworks/opencv2.framework; sourceTree = "<group>"; };
+		1AB4FA3E2715D4450004A762 /* Synestheatre-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Synestheatre-Bridging-Header.h"; sourceTree = "<group>"; };
+		1AB4FA3F2715D4450004A762 /* ARKitDepthSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitDepthSensor.swift; sourceTree = "<group>"; };
 		1AB734D522243CF3009DE78F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AB734D922244546009DE78F /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		1AB9D4BC23E1AB2400FDFFF0 /* single_colour.synt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = single_colour.synt; sourceTree = "<group>"; };
@@ -282,6 +285,7 @@
 				1A3573572204567D00FFEFB8 /* CameraManager.m */,
 				1A64C6942244E86F0088970C /* FileDepthSensor.h */,
 				1A64C6952244E86F0088970C /* FileDepthSensor.m */,
+				1AB4FA3F2715D4450004A762 /* ARKitDepthSensor.swift */,
 			);
 			name = Sensors;
 			sourceTree = "<group>";
@@ -363,6 +367,7 @@
 				1A3D32DC1D5C840B000BB2C5 /* main.m */,
 				1A3D33151D5C8827000BB2C5 /* Synestheatre-Prefix.pch */,
 				1A109386211301BB00FEACC8 /* README.md */,
+				1AB4FA3E2715D4450004A762 /* Synestheatre-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 					1A3D32D71D5C840B000BB2C5 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7M9C479L4K;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -599,6 +605,7 @@
 				1A64C6962244E86F0088970C /* FileDepthSensor.m in Sources */,
 				1A3D32DD1D5C840B000BB2C5 /* main.m in Sources */,
 				1A23C1AE21E78C0400E0CDBA /* FlirOneDepthSensor.m in Sources */,
+				1AB4FA402715D4450004A762 /* ARKitDepthSensor.swift in Sources */,
 				1A64C6B72244EF290088970C /* MLBFilePreviewController.m in Sources */,
 				1A614B331D5D00A900004400 /* SynestheatreMain.mm in Sources */,
 				1A7BBC5F1D953A71001E45E0 /* ConfigurationLoader.m in Sources */,
@@ -718,6 +725,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Synestheatre/Synestheatre.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -736,12 +744,15 @@
 				GCC_PREFIX_HEADER = "Synestheatre/Synestheatre-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
 				INFOPLIST_FILE = Synestheatre/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesalvarez.synestheatre;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Synestheatre/Synestheatre-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -752,6 +763,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Synestheatre/Synestheatre.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -773,12 +785,14 @@
 					"\"$(TEMP_ROOT)/UninstalledProducts/$(PLATFORM_NAME)\"",
 				);
 				INFOPLIST_FILE = Synestheatre/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesalvarez.synestheatre;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Synestheatre/Synestheatre-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
