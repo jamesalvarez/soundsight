@@ -45,7 +45,9 @@ class ARKitDepthSensor : NSObject, DepthSensor, ARSessionDelegate {
     }
     
     func stop() {
-        
+        guard let session = session else { return }
+        session.pause()
+        self.session = nil
     }
     
     func getImage() -> UIImage! {
@@ -147,7 +149,6 @@ class ARKitDepthSensor : NSObject, DepthSensor, ARSessionDelegate {
         
         guard let currentFrame = session.currentFrame else { return false }
         
-        // Prepare RGB image to save
         let frameImage : CVPixelBuffer = currentFrame.capturedImage
         let imageSize = CGSize(width: CVPixelBufferGetWidth(frameImage),
                                height: CVPixelBufferGetHeight(frameImage))
@@ -248,23 +249,63 @@ class ARKitDepthSensor : NSObject, DepthSensor, ARSessionDelegate {
     }
     
     func getColourImage() -> UIImage! {
-        return nil
+        
+        guard let currentFrame = session.currentFrame else { return nil }
+        
+        // Prepare RGB image to save
+        let frameImage : CVPixelBuffer = currentFrame.capturedImage
+        let imageSize = CGSize(width: CVPixelBufferGetWidth(frameImage),
+                               height: CVPixelBufferGetHeight(frameImage))
+        let ciImage = CIImage(cvPixelBuffer: frameImage)
+        
+        return UIImage(ciImage: ciImage)
     }
     
     func getCentreDebugInfo() -> String! {
-        return nil
+        
+        guard let currentFrame = session.currentFrame else { return "No session active" }
+            
+
+        guard let depthData = currentFrame.sceneDepth?.depthMap else { return "No depth data from session" }
+    
+    
+        CVPixelBufferLockBaseAddress(depthData, CVPixelBufferLockFlags(rawValue: 0))
+        defer {
+            CVPixelBufferUnlockBaseAddress(depthData, CVPixelBufferLockFlags(rawValue: 0))
+        }
+        
+        let width = CVPixelBufferGetWidth(depthData)
+        let height = CVPixelBufferGetHeight(depthData)
+        
+        if (frame_cols == 0 || frame_rows == 0) {
+            return "No data"
+        }
+        
+        guard let baseAddress = CVPixelBufferGetBaseAddress(depthData) else {
+            return "Error 41"
+        }
+        
+        let floatBuffer = unsafeBitCast(baseAddress, to: UnsafeMutablePointer<Float32>.self)
+    
+        let nearestX = width / 2
+        let nearestY = height / 2
+        let depthArrayIndex : Int = nearestY  * width + nearestX
+        let depthPixel : Float32 = baseAddress[depthArrayIndex];
+        
+
+        return String(format:"Dual cam depth: %.f mm",depthPixel * 1000);
     }
     
     func getType() -> String! {
-        return nil
+        return "ARKit"
     }
     
     func isSensorConnected() -> Bool {
-        return false
+        return true
     }
     
     func sensorDisconnectionReason() -> String! {
-        return nil
+        return "Unknown"
     }
     
 }
