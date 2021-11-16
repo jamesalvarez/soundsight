@@ -277,7 +277,7 @@ class ARKitDepthSensor : NSObject, DepthSensor, ARSessionDelegate {
         let width = CVPixelBufferGetWidth(depthData)
         let height = CVPixelBufferGetHeight(depthData)
         
-        if (frame_cols == 0 || frame_rows == 0) {
+        if (width == 0 || height == 0) {
             return "No data"
         }
         
@@ -290,7 +290,7 @@ class ARKitDepthSensor : NSObject, DepthSensor, ARSessionDelegate {
         let nearestX = width / 2
         let nearestY = height / 2
         let depthArrayIndex : Int = nearestY  * width + nearestX
-        let depthPixel : Float32 = baseAddress[depthArrayIndex];
+        let depthPixel : Float32 = floatBuffer[depthArrayIndex];
         
 
         return String(format:"Dual cam depth: %.f mm",depthPixel * 1000);
