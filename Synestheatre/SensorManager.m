@@ -37,12 +37,10 @@
     
     // Force deallocation
     depthSensor =  nil;
-    
-    depthSensor = [[ARKitDepthSensor alloc] init];
-    
+
     NSString* sensorType = [[NSUserDefaults standardUserDefaults] stringForKey:@"sensor"];
     
-    /*
+
     if ([sensorType isEqualToString:@"arkit"]) {
         depthSensor = [[ARKitDepthSensor alloc] init];
     } else if ([sensorType isEqualToString:@"cam"]){
@@ -59,7 +57,7 @@
         depthSensor = [[FileDepthSensor alloc] init];
     } else { // auto mode is default
         depthSensor = [self getAutoSensor];
-    }*/
+    }
     
         
     [depthSensor setUpdateStatusBlock:^(NSString* msg) {

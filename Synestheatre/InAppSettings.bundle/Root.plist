@@ -16,7 +16,7 @@
 			<key>Key</key>
 			<string>exponential_loudness</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -68,7 +68,7 @@
 			<key>Key</key>
 			<string>sensor</string>
 			<key>DefaultValue</key>
-			<string>auto</string>
+			<string>arkit</string>
 			<key>Values</key>
 			<array>
 				<string>auto</string>
@@ -77,6 +77,7 @@
 				<string>flir</string>
 				<string>flirmsx</string>
 				<string>file</string>
+				<string>arkit</string>
 			</array>
 			<key>Titles</key>
 			<array>
@@ -86,6 +87,7 @@
 				<string>Flir Camera</string>
 				<string>Flir MSX</string>
 				<string>Image / Movie</string>
+				<string>AR Kit</string>
 			</array>
 		</dict>
 		<dict>
@@ -294,7 +296,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string>0.0</string>
+			<string>0.05</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>KeyboardType</key>
@@ -348,7 +350,7 @@
 			<key>Key</key>
 			<string>view_mode</string>
 			<key>DefaultValue</key>
-			<string>vr_mode</string>
+			<string>depth_mode</string>
 			<key>Titles</key>
 			<array>
 				<string>VR Mode</string>
