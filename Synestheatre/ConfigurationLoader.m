@@ -61,7 +61,6 @@
         _currentConfig = defaultConfig;
     } else {
         // Config name not found
-        NSString *defaultConfig = [[NSUserDefaults standardUserDefaults] stringForKey:@"synt_name"];
         NSString* msg = [NSString stringWithFormat:@"Config named: %@ not found! Using default.", defaultConfig];
         [Toast makeToast:msg];
         _currentConfig = _configNames[0];

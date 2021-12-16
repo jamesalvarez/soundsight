@@ -15,6 +15,8 @@
 #import "SynestheatreMain.h"
 #import "DepthSensor.h"
 #import <ExternalAccessory/ExternalAccessory.h>
+#import "Synestheatre-Swift.h"
+
 
 @interface SensorManager () {
     id<DepthSensor> depthSensor;
@@ -34,11 +36,16 @@
 - (id<DepthSensor>) getSensor {
     
     // Force deallocation
-    depthSensor = nil;
+    depthSensor =  nil;
+    
+    depthSensor = [[ARKitDepthSensor alloc] init];
     
     NSString* sensorType = [[NSUserDefaults standardUserDefaults] stringForKey:@"sensor"];
     
-    if ([sensorType isEqualToString:@"cam"]){
+    /*
+    if ([sensorType isEqualToString:@"arkit"]) {
+        depthSensor = [[ARKitDepthSensor alloc] init];
+    } else if ([sensorType isEqualToString:@"cam"]){
         depthSensor = [[DualCameraDepthSensor alloc] init];
     } else if ([sensorType isEqualToString:@"structure"]){
         depthSensor = [[StructureSensorDepthSensor alloc] init];
@@ -52,7 +59,8 @@
         depthSensor = [[FileDepthSensor alloc] init];
     } else { // auto mode is default
         depthSensor = [self getAutoSensor];
-    }
+    }*/
+    
         
     [depthSensor setUpdateStatusBlock:^(NSString* msg) {
         [Toast makeToast:msg];
@@ -65,6 +73,9 @@
 
 // We have to do this since Flir keeps crashing when plugging in structure sensor
 - (id<DepthSensor>) getAutoSensor {
+    
+    // Temporarily always picking ARKitDepth sensor
+    return [[ARKitDepthSensor alloc] init];
 
     NSArray *accessories = [[EAAccessoryManager sharedAccessoryManager]
                             connectedAccessories];

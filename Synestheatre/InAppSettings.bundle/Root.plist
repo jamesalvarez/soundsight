@@ -368,7 +368,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string>single_colour</string>
+			<string>PT500ms</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
