@@ -46,9 +46,28 @@
     [_collectionView setDelegate:self];
     [_collectionView reloadData];
     
-    // Do setup in bg and display spinner whilst it happens
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil message:@"Loading configurations..." preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"start view controller will appear");
+    [AppDelegate unRestrictOrientation];
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    static bool SHOWEDDISCLAIMER = false;
+
+    
+    // Do setup in bg and display spinner whilst it happens    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil message:@"Loading..." preferredStyle:UIAlertControllerStyleAlert];
     
     UIActivityIndicatorView* loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(10, 5, 50, 50)];
     [loadingIndicator setHidesWhenStopped:true];
@@ -72,32 +91,15 @@
                 self->_selectModeLabel.text = @"Select mode:";
                 [self dismissViewControllerAnimated:false completion:nil];
                 [self->_collectionView reloadData];
+                
+                if (!SHOWEDDISCLAIMER) {
+                    [self showDisclaimerDialog];
+                    SHOWEDDISCLAIMER = true;
+                }
             });
         });
         
     }];
-    
-    
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    NSLog(@"start view controller will appear");
-    [AppDelegate unRestrictOrientation];
-    
-}
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    static bool SHOWEDDISCLAIMER = false;
-    
-    if (!SHOWEDDISCLAIMER) {
-        [self showDisclaimerDialog];
-        SHOWEDDISCLAIMER = true;
-    }
     
 }
 
