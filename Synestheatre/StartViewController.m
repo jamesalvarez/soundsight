@@ -53,7 +53,7 @@
     UIActivityIndicatorView* loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(10, 5, 50, 50)];
     [loadingIndicator setHidesWhenStopped:true];
     [loadingIndicator startAnimating];
-    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleMedium;
     [alert.view addSubview:loadingIndicator];
 
     [self presentViewController:alert animated:true completion:^{
@@ -149,7 +149,7 @@
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {}
 
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    return NO;
 }
 
 - (void)viewWillLayoutSubviews {

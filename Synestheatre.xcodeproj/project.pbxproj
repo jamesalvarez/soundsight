@@ -14,6 +14,7 @@
 		1A1EE7531E7AAA8600D4F8B9 /* TransparentLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1EE7521E7AAA8600D4F8B9 /* TransparentLabelView.m */; };
 		1A23C1B021E89C7800E0CDBA /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A23C1AF21E89C7800E0CDBA /* opencv2.framework */; };
 		1A23C1B921F0E7DB00E0CDBA /* SensorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */; };
+		1A3073DC29719FAF00B8AFE9 /* ARKitDepthSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3073DB29719FAF00B8AFE9 /* ARKitDepthSensor.swift */; };
 		1A310DA921EF89DA00753192 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A310DA821EF89DA00753192 /* AssetsLibrary.framework */; };
 		1A3573582204567D00FFEFB8 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3573572204567D00FFEFB8 /* CameraManager.m */; };
 		1A3899E322D76E89005238F7 /* PitchPreProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3899E222D76E89005238F7 /* PitchPreProcessor.m */; };
@@ -104,6 +105,8 @@
 		1A23C1AF21E89C7800E0CDBA /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Synestheatre/opencv2.framework; sourceTree = "<group>"; };
 		1A23C1B721F0E7DB00E0CDBA /* SensorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorManager.h; sourceTree = "<group>"; };
 		1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorManager.m; sourceTree = "<group>"; };
+		1A3073DA29719FAE00B8AFE9 /* Synestheatre-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Synestheatre-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A3073DB29719FAF00B8AFE9 /* ARKitDepthSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARKitDepthSensor.swift; sourceTree = "<group>"; };
 		1A310DA821EF89DA00753192 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1A3573562204567D00FFEFB8 /* CameraManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraManager.h; sourceTree = "<group>"; };
 		1A3573572204567D00FFEFB8 /* CameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraManager.m; sourceTree = "<group>"; };
@@ -291,6 +294,7 @@
 		1A23C1B221E89DFC00E0CDBA /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
+				1A3073DB29719FAF00B8AFE9 /* ARKitDepthSensor.swift */,
 				1A23C1B721F0E7DB00E0CDBA /* SensorManager.h */,
 				1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */,
 				1AC5B72A2108AB97002142F2 /* DepthSensor.h */,
@@ -300,6 +304,7 @@
 				1A19C9B61D64679D007EB649 /* StructureSensorDepthSensor.mm */,
 				1A3573562204567D00FFEFB8 /* CameraManager.h */,
 				1A3573572204567D00FFEFB8 /* CameraManager.m */,
+				1A3073DA29719FAE00B8AFE9 /* Synestheatre-Bridging-Header.h */,
 			);
 			name = Sensors;
 			sourceTree = "<group>";
@@ -466,7 +471,8 @@
 				TargetAttributes = {
 					1A3D32D71D5C840B000BB2C5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9FT26655R6;
+						DevelopmentTeam = 7M9C479L4K;
+						LastSwiftMigration = 1320;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -565,6 +571,7 @@
 				1A3D32E31D5C840B000BB2C5 /* MainViewController.mm in Sources */,
 				1A3BF5C420EFB44400A158F2 /* ParameterController.m in Sources */,
 				1A95EC7F250FC53400FC2A30 /* ModeInformationViewController.m in Sources */,
+				1A3073DC29719FAF00B8AFE9 /* ARKitDepthSensor.swift in Sources */,
 				1A23C1B921F0E7DB00E0CDBA /* SensorManager.m in Sources */,
 				1ABAD6DD231943B0007BAD32 /* ConfigCell.m in Sources */,
 				1A19B1E71D8C22F00057689F /* GestureController.m in Sources */,
@@ -636,7 +643,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -685,7 +692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -698,12 +705,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Synestheatre/Synestheatre.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 9FT26655R6;
+				DEVELOPMENT_TEAM = 7M9C479L4K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -717,12 +725,15 @@
 				GCC_PREFIX_HEADER = "Synestheatre/Synestheatre-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
 				INFOPLIST_FILE = Synestheatre/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soundsight.soundsightuk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamesalvarez.soundsight;
 				PRODUCT_NAME = SoundSight;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Synestheatre/Synestheatre-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -733,12 +744,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Synestheatre/Synestheatre.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 9FT26655R6;
+				DEVELOPMENT_TEAM = 7M9C479L4K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,12 +767,14 @@
 					"\"$(TEMP_ROOT)/UninstalledProducts/$(PLATFORM_NAME)\"",
 				);
 				INFOPLIST_FILE = Synestheatre/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soundsight.soundsightuk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamesalvarez.soundsight;
 				PRODUCT_NAME = SoundSight;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Synestheatre/Synestheatre-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};

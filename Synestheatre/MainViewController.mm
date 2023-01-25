@@ -88,7 +88,7 @@
     UIActivityIndicatorView* loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(10, 5, 50, 50)];
     [loadingIndicator setHidesWhenStopped:true];
     [loadingIndicator startAnimating];
-    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleMedium;
     [alert.view addSubview:loadingIndicator];
     UIViewController* vc = [Toast topViewController];
     
@@ -183,7 +183,7 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    return NO;
 }
 
 #pragma mark IASKAppSettingsViewControllerDelegate protocol

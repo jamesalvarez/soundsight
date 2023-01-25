@@ -43,7 +43,7 @@
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UIStatusBarHidden</key>
-	<true/>
+	<false/>
 	<key>UISupportedExternalAccessoryProtocols</key>
 	<array>
 		<string>io.structure.control</string>

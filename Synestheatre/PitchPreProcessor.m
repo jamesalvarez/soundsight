@@ -57,9 +57,9 @@
     [engine attachNode:player];
     [engine attachNode:timePitch];
 
-    const double hardwareSampleRate = [engine.outputNode outputFormatForBus:0].sampleRate;
+    //const double hardwareSampleRate = [engine.outputNode outputFormatForBus:0].sampleRate;
     AVAudioFormat* sourceFormat = [sourceFile processingFormat];
-    AVAudioFormat* outputFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:hardwareSampleRate channels:2];
+    //AVAudioFormat* outputFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:hardwareSampleRate channels:2];
     
     [engine connect: player to: timePitch format: sourceFormat];
     [engine connect: timePitch to: engine.mainMixerNode format: sourceFormat];
