@@ -32,6 +32,8 @@ return false;
 -(void)loadDefaults {
     
     // Set defaults
+    _rows = 1;
+    _cols = 1;
     _horizontalFocus = 0.0f;
     _verticalFocus = 0.0f;
     _horizontalTimingOffset = 0.66f;
@@ -42,8 +44,6 @@ return false;
     _depthRange = 2500;
     _depthDistance = 0;
     _depthMode = false;
-    _cols = 0;
-    _rows = 0;
     _colours = 0;
     _defaultDepth = 0.0;
     _volSource = @"depth";
@@ -72,6 +72,8 @@ return false;
 }
 
 - (bool)loadSyntFile:(NSString*)syntFilePath error:(NSError**)error {
+    
+    [self loadDefaults];
     
     // Get JSON Dictionary of selected synt file
     NSInputStream *inputStream = [[NSInputStream alloc] initWithFileAtPath:syntFilePath];
@@ -214,7 +216,6 @@ return false;
     NSLog(@"Succesfully found all %d sound files", soundFileNumber);
     _filenames = urls;
     
-    [self loadDefaults];
     
     NSArray* ct = _syntJsonDic[@"colour_timing"];
     if (ct != nil) {
