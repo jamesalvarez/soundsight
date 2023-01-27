@@ -87,7 +87,7 @@
                         [self->_collectionView reloadData];
                     });
                 }];
-                self->_selectModeLabel.text = @"Select mode:";
+                self->_selectModeLabel.text = @"SoundSight";
                 [self dismissViewControllerAnimated:false completion:nil];
                 [self->_collectionView reloadData];
                 
