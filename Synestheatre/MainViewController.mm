@@ -62,13 +62,13 @@
 -(void) viewWillDisappear:(BOOL)animated {
     [self stopEngine];
     [[self navigationController] setNavigationBarHidden:true];
-    [super viewWillDisappear:false];
+    [super viewWillDisappear:animated];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[EAAccessoryManager sharedAccessoryManager] unregisterForLocalNotifications];
-    [super viewDidDisappear:false];
+    [super viewDidDisappear:animated];
 }
 
 -(void) sensorChanged:(NSNotification *) notification {
@@ -92,11 +92,10 @@
     [loadingIndicator startAnimating];
     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleMedium;
     [alert.view addSubview:loadingIndicator];
-    UIViewController* vc = [Toast topViewController];
     
-    [vc presentViewController:alert animated:true completion:^{
+    [self presentViewController:alert animated:true completion:^{
         [self restartEngineWork];
-        [vc dismissViewControllerAnimated:false completion:nil];
+        [self dismissViewControllerAnimated:false completion:nil];
     }];
 }
 
