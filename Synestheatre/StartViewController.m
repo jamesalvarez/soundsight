@@ -53,10 +53,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [[self navigationController] setNavigationBarHidden:true];
     [super viewWillAppear:animated];
-    NSLog(@"start view controller will appear");
-    [AppDelegate unRestrictOrientation];
-    
+    [AppDelegate restrictOrientation];
 }
 
 

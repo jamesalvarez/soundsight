@@ -28,9 +28,10 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    [[self navigationController] setNavigationBarHidden:false];
     [super viewWillAppear:animated];
-    NSLog(@"main view controller will appear");
     [AppDelegate restrictOrientation];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,15 +59,16 @@
     [self restartEngine];
 }
 
-
-
+-(void) viewWillDisappear:(BOOL)animated {
+    [self stopEngine];
+    [[self navigationController] setNavigationBarHidden:true];
+    [super viewWillDisappear:false];
+}
 
 -(void) viewDidDisappear:(BOOL)animated {
-    
-    NSLog(@"View Did Disappear");
-    [self stopEngine];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[EAAccessoryManager sharedAccessoryManager] unregisterForLocalNotifications];
+    [super viewDidDisappear:false];
 }
 
 -(void) sensorChanged:(NSNotification *) notification {
