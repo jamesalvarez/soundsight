@@ -33,15 +33,12 @@
     [_descriptionLabel setText:_configurationManager.currentConfig.descriptionText];
 }
 
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {}
 
-// Called when leaving the main settings window
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {}
 
 @end

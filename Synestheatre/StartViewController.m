@@ -144,11 +144,19 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"prepare");
-}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {}
 
--(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {}
+// Called when leaving the main settings window
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+    if ([segue.identifier  isEqual: @"modeStart"]) {
+        // User has selected start on the mode dialog
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier: @"startShow" sender: self ];
+        });
+    } else {
+        // User clicked back and does not want to start
+    }
+}
 
 - (BOOL)prefersStatusBarHidden {
     return NO;
@@ -176,6 +184,10 @@
     
     // Show modal dialog with info
     [self showDisclaimerDialog];
+}
+
+- (IBAction)startButtonTouch:(id)sender {
+    NSLog(@"start");
 }
 
 - (void)showDisclaimerDialog {
