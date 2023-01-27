@@ -61,7 +61,7 @@
 
 -(void) viewWillDisappear:(BOOL)animated {
     [self stopEngine];
-    [[self navigationController] setNavigationBarHidden:true];
+    
     [super viewWillDisappear:animated];
 }
 
@@ -69,6 +69,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[EAAccessoryManager sharedAccessoryManager] unregisterForLocalNotifications];
     [super viewDidDisappear:animated];
+    [[self navigationController] setNavigationBarHidden:true];
 }
 
 -(void) sensorChanged:(NSNotification *) notification {

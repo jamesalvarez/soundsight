@@ -53,7 +53,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [[self navigationController] setNavigationBarHidden:true];
+    
     [super viewWillAppear:animated];
     [AppDelegate restrictOrientation];
 }
@@ -61,7 +61,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [[self navigationController] setNavigationBarHidden:true];
     static bool SHOWEDDISCLAIMER = false;
 
     
