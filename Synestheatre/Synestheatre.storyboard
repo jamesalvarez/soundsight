@@ -197,11 +197,6 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buu-VQ-elU">
-                                <rect key="frame" x="2" y="696" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="hand"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-Jr-vQp" userLabel="Rotate Button">
                                 <rect key="frame" x="374" y="696" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -224,7 +219,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Cj7-NH-m5s"/>
                     <connections>
-                        <outlet property="dragModeButton" destination="Buu-VQ-elU" id="DTp-eH-mSO"/>
                         <outlet property="gestureController" destination="HCF-dd-Ird" id="afZ-SY-WCk"/>
                         <outlet property="parameterController" destination="4D7-OR-Adl" id="4zf-zg-XWZ"/>
                         <outlet property="previewView" destination="hCB-Tl-0yX" id="jDY-g8-7YB"/>
@@ -272,7 +266,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hand" width="32" height="32"/>
         <image name="refresh-page-option" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
