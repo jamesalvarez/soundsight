@@ -175,20 +175,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"settings_show"]) {
-        IASKAppSettingsViewController *settingsViewController = (id)((UINavigationController*)segue.destinationViewController).topViewController;
-        settingsViewController.delegate = self;
-    }
+
 }
 
 - (BOOL)prefersStatusBarHidden {
     return NO;
-}
-
-#pragma mark IASKAppSettingsViewControllerDelegate protocol
-- (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark image view

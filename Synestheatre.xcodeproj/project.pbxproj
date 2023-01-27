@@ -41,9 +41,7 @@
 		1A3D33371D5CB3FA000BB2C5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3D33361D5CB3FA000BB2C5 /* AudioToolbox.framework */; };
 		1A3D333A1D5CB528000BB2C5 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D33391D5CB528000BB2C5 /* AudioController.m */; };
 		1A4FD09F211C67BF0076EBC5 /* Synestheatre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FD09E211C67BF0076EBC5 /* Synestheatre.storyboard */; };
-		1A4FD0A4211C74B80076EBC5 /* InAppSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FD0A3211C74B80076EBC5 /* InAppSettings.bundle */; };
 		1A614B331D5D00A900004400 /* SynestheatreMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1A614B321D5D00A900004400 /* SynestheatreMain.mm */; };
-		1A66CE9A2576B4BE0039C811 /* InAppSettingsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A66CE982576B4780039C811 /* InAppSettingsKit.framework */; };
 		1A688A11211E0A44005E6E34 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A688A10211E0A44005E6E34 /* Configuration.m */; };
 		1A7BBC5F1D953A71001E45E0 /* ConfigurationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BBC5E1D953A71001E45E0 /* ConfigurationManager.m */; };
 		1A809E9925271AAE00238076 /* Scientific_Tones in Resources */ = {isa = PBXBuildFile; fileRef = 1A809E9525271AAC00238076 /* Scientific_Tones */; };
@@ -81,7 +79,6 @@
 		1AB734D622243CF3009DE78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB734D522243CF3009DE78F /* LaunchScreen.storyboard */; };
 		1AB734DA22244546009DE78F /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 1AB734D922244546009DE78F /* AppIcon.appiconset */; };
 		1ABAD6DD231943B0007BAD32 /* ConfigCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAD6DC231943B0007BAD32 /* ConfigCell.m */; };
-		1ABAFC8920F4C918000B8B28 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAFC8820F4C918000B8B28 /* SettingsTableViewController.m */; };
 		1ABBE53821AECFB000318316 /* HRTFPreProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBE53721AECFB000318316 /* HRTFPreProcessor.m */; };
 		1ABD437422ED932B0052508F /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD437322ED932B0052508F /* StartViewController.m */; };
 		1AC5B729210886E3002142F2 /* DualCameraDepthSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5B728210886E3002142F2 /* DualCameraDepthSensor.m */; };
@@ -90,7 +87,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A07185E23044F9D0025CA7F /* BEMCheckBox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMCheckBox.framework; path = Carthage/Build/iOS/BEMCheckBox.framework; sourceTree = "<group>"; };
 		1A1093832111E8F900FEACC8 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		1A1093842111E8F900FEACC8 /* Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		1A109386211301BB00FEACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -144,10 +140,8 @@
 		1A3D33381D5CB528000BB2C5 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		1A3D33391D5CB528000BB2C5 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 		1A4FD09E211C67BF0076EBC5 /* Synestheatre.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Synestheatre.storyboard; sourceTree = "<group>"; };
-		1A4FD0A3211C74B80076EBC5 /* InAppSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = InAppSettings.bundle; sourceTree = "<group>"; };
 		1A614B311D5D00A900004400 /* SynestheatreMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynestheatreMain.h; sourceTree = "<group>"; };
 		1A614B321D5D00A900004400 /* SynestheatreMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SynestheatreMain.mm; sourceTree = "<group>"; };
-		1A66CE982576B4780039C811 /* InAppSettingsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InAppSettingsKit.framework; sourceTree = "<group>"; };
 		1A688A0F211E0A44005E6E34 /* Configuration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		1A688A10211E0A44005E6E34 /* Configuration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		1A688A1621219065005E6E34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -195,8 +189,6 @@
 		1AB734D922244546009DE78F /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		1ABAD6DB231943B0007BAD32 /* ConfigCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigCell.h; sourceTree = "<group>"; };
 		1ABAD6DC231943B0007BAD32 /* ConfigCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigCell.m; sourceTree = "<group>"; };
-		1ABAFC8720F4C918000B8B28 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
-		1ABAFC8820F4C918000B8B28 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		1ABBE53621AECFB000318316 /* HRTFPreProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRTFPreProcessor.h; sourceTree = "<group>"; };
 		1ABBE53721AECFB000318316 /* HRTFPreProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRTFPreProcessor.m; sourceTree = "<group>"; };
 		1ABD437222ED932B0052508F /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
@@ -228,7 +220,6 @@
 				1A23C1B021E89C7800E0CDBA /* opencv2.framework in Frameworks */,
 				1A3D33001D5C8503000BB2C5 /* AVFoundation.framework in Frameworks */,
 				1A3D32FF1D5C8503000BB2C5 /* Accelerate.framework in Frameworks */,
-				1A66CE9A2576B4BE0039C811 /* InAppSettingsKit.framework in Frameworks */,
 				1A3D33091D5C8503000BB2C5 /* OpenGLES.framework in Frameworks */,
 				1A3D33071D5C8503000BB2C5 /* ImageIO.framework in Frameworks */,
 				1AAE91DE2362F958004740EF /* StoreKit.framework in Frameworks */,
@@ -269,8 +260,6 @@
 			children = (
 				1A688A1621219065005E6E34 /* AppDelegate.h */,
 				1A3D32DF1D5C840B000BB2C5 /* AppDelegate.m */,
-				1ABAFC8720F4C918000B8B28 /* SettingsTableViewController.h */,
-				1ABAFC8820F4C918000B8B28 /* SettingsTableViewController.m */,
 				1A614B311D5D00A900004400 /* SynestheatreMain.h */,
 				1A614B321D5D00A900004400 /* SynestheatreMain.mm */,
 				1A1093832111E8F900FEACC8 /* Toast.h */,
@@ -395,7 +384,6 @@
 				1A3D32E71D5C840B000BB2C5 /* Assets.xcassets */,
 				1AB734D922244546009DE78F /* AppIcon.appiconset */,
 				1A3D33111D5C8597000BB2C5 /* Synestheatre.entitlements */,
-				1A4FD0A3211C74B80076EBC5 /* InAppSettings.bundle */,
 				1A4FD09E211C67BF0076EBC5 /* Synestheatre.storyboard */,
 				1AB734D522243CF3009DE78F /* LaunchScreen.storyboard */,
 				1A3D32DC1D5C840B000BB2C5 /* main.m */,
@@ -410,9 +398,7 @@
 		1A3D33121D5C85A1000BB2C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A66CE982576B4780039C811 /* InAppSettingsKit.framework */,
 				1AAE91DD2362F958004740EF /* StoreKit.framework */,
-				1A07185E23044F9D0025CA7F /* BEMCheckBox.framework */,
 				1A23C1AF21E89C7800E0CDBA /* opencv2.framework */,
 				1A310DA821EF89DA00753192 /* AssetsLibrary.framework */,
 				1AD1AF2B1D82257400698CD8 /* CoreAudio.framework */,
@@ -508,7 +494,6 @@
 				1A8E14D92507B318007DB47F /* String_Pluck.synt in Resources */,
 				1A809E9925271AAE00238076 /* Scientific_Tones in Resources */,
 				1A9386B7231E980400F6E0E6 /* baseline_lock_black_36pt.xcassets in Resources */,
-				1A4FD0A4211C74B80076EBC5 /* InAppSettings.bundle in Resources */,
 				1A9386B8231E980400F6E0E6 /* baseline_lock_black_24pt.xcassets in Resources */,
 				1A8E14E12507B318007DB47F /* Musical_Shapes.synt in Resources */,
 				1A8E14DE2507B318007DB47F /* Song_Slice_Beach_Chill in Resources */,
@@ -563,7 +548,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABAFC8920F4C918000B8B28 /* SettingsTableViewController.m in Sources */,
 				1AC5B729210886E3002142F2 /* DualCameraDepthSensor.m in Sources */,
 				1A9386C4231EAD8400F6E0E6 /* UIColor+ExtraColours.m in Sources */,
 				1A1498D9233E58450035EA18 /* PreviewView.m in Sources */,

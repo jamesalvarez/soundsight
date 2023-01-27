@@ -11,7 +11,6 @@
 #import "GestureController.h"
 #import "TransparentLabelView.h"
 #import "ParameterController.h"
-#import "InAppSettingsKit/IASKAppSettingsViewController.h"
 #import "PreviewView.h"
 
 @class GestureController;
@@ -20,7 +19,7 @@
 /**
  *  Creates the Synestheatre and controls interactions with it
  */
-@interface MainViewController : UIViewController <IASKSettingsDelegate>
+@interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *dragModeButton;

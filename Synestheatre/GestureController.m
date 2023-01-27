@@ -130,7 +130,7 @@ typedef enum {
         pressStartTime = [NSDate timeIntervalSinceReferenceDate];
         draggedWhilstLongPressing = false;
         AudioServicesPlayAlertSound(1105);
-        [_viewControler performSegueWithIdentifier:@"settings_show" sender:nil];
+        [_viewControler performSegueWithIdentifier:@"backStart" sender:nil];
     } else if ([longPressGesture state] == UIGestureRecognizerStateEnded) {
         
         //NSTimeInterval duration = [NSDate timeIntervalSinceReferenceDate] - pressStartTime;

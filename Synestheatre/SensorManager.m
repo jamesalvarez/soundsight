@@ -62,6 +62,8 @@
 // We have to do this since Flir keeps crashing when plugging in structure sensor
 - (id<DepthSensor>) getAutoSensor {
     
+    return [[DualCameraDepthSensor alloc] init];
+    
     // Temporarily always picking ARKitDepth sensor
     return [[ARKitDepthSensor alloc] init];
 

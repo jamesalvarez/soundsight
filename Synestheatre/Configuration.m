@@ -25,17 +25,23 @@ return false;
 
 -(instancetype)init {
     if ( !(self = [super init])) return nil;
+    [self loadDefaults];
+    return self;
+}
+
+-(void)loadDefaults {
+    
     // Set defaults
     _horizontalFocus = 0.0f;
     _verticalFocus = 0.0f;
-    _horizontalTimingOffset = 0.0f;
+    _horizontalTimingOffset = 0.66f;
     _verticalTimingOffset = 0.0f;
     _depthDataWindowWidth = 1.0f;
     _depthDataWindowHeight = 1.0f;
     _heartbeatInterval = 1.0f;
     _depthRange = 2500;
     _depthDistance = 0;
-    _depthMode = true;
+    _depthMode = false;
     _cols = 0;
     _rows = 0;
     _colours = 0;
@@ -45,46 +51,20 @@ return false;
     _exponentialLoudness = false;
     _maxDepthVolume = 0.0f;
     _locked = true;
+    _panGesture = @"none";
+    _twoFingerGesture = @"none";
+    _pinchGesture = @"none";
+    
     // this is the setup for one colour
+    _colourConfiguration.bw_mode = true;
+    _colourConfiguration.bw_level = 0.5;
     _colourConfiguration.boundary_mode = false;
     _colourConfiguration.saturation_threshold = 1;
     _colourConfiguration.n_hue_thresholds = 0;
     _colourConfiguration.n_lightness_thresholds = 0;
-    
-    [self loadDefaults];
-    return self;
-}
 
--(void)loadDefaults {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    _horizontalFocus = [defaults floatForKey:@"horizontal_focus"];
-    _verticalFocus = [defaults floatForKey:@"vertical_focus"];
-    _horizontalTimingOffset = [defaults floatForKey:@"horizontal_offset"];
-    _verticalTimingOffset = [defaults floatForKey:@"vertical_offset"];
-    _depthDataWindowWidth = [defaults floatForKey:@"window_width"];
-    _depthDataWindowHeight = [defaults floatForKey:@"window_height"];
-    _heartbeatInterval = [defaults floatForKey:@"heartbeat_interval"];
-    _depthRange = [defaults floatForKey:@"depth_range"];
-    _depthDistance = [defaults floatForKey:@"depth_distance"];
-    _depthMode = [defaults boolForKey:@"depth_mode"];
-    _panGesture = [defaults stringForKey:@"pan_gesture"];
-    _twoFingerGesture = [defaults stringForKey:@"two_finger_gesture"];
-    _pinchGesture = [defaults stringForKey:@"pinch_gesture"];
-    _volSource = [defaults stringForKey:@"vol_source"];
-    _defaultDepth = [defaults floatForKey:@"default_depth"];
-    _exponentialLoudness = [defaults floatForKey:@"exponential_loudness"];
-    _maxDepthVolume = [defaults floatForKey:@"max_depth_vol"];
-
-    
-    // this is the setup for one colour
-    _colourConfiguration.boundary_mode = false;
-    _colourConfiguration.saturation_threshold = 1;
-    _colourConfiguration.n_hue_thresholds = 0;
-    _colourConfiguration.n_lightness_thresholds = 0;
-    
-    _reverbConfiguration.wetDryMix = [defaults floatForKey:@"wet-dry"];
-    _reverbConfiguration.presetIndex = [defaults floatForKey:@"reverb-preset"];
+    _reverbConfiguration.wetDryMix = 50;
+    _reverbConfiguration.presetIndex = 0;
     
     for(int i = 0; i < MAX_COLOURS; i += 1) {
         _colourConfiguration.colour_timings[i] = 0;
