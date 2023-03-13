@@ -13,7 +13,6 @@
 #import "SynestheatreMain.h"
 #import "DepthSensor.h"
 #import <ExternalAccessory/ExternalAccessory.h>
-#import "SoundSight-Swift.h"
 
 
 @interface SensorManager () {
@@ -39,9 +38,7 @@
     NSString* sensorType = [[NSUserDefaults standardUserDefaults] stringForKey:@"sensor"];
     
 
-    if ([sensorType isEqualToString:@"arkit"]) {
-        depthSensor = [[ARKitDepthSensor alloc] init];
-    } else if ([sensorType isEqualToString:@"cam"]){
+    if ([sensorType isEqualToString:@"cam"]){
         depthSensor = [[DualCameraDepthSensor alloc] init];
     } else if ([sensorType isEqualToString:@"structure"]){
         depthSensor = [[StructureSensorDepthSensor alloc] init];
@@ -63,9 +60,6 @@
 - (id<DepthSensor>) getAutoSensor {
     
     return [[DualCameraDepthSensor alloc] init];
-    
-    // Temporarily always picking ARKitDepth sensor
-    return [[ARKitDepthSensor alloc] init];
 
     NSArray *accessories = [[EAAccessoryManager sharedAccessoryManager]
                             connectedAccessories];

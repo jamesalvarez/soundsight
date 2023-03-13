@@ -48,32 +48,40 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
     if (![CameraManager queryCameraAuthorizationStatusAndNotifyUserIfNotGranted]) {
         return;
     }
-    
-    
-    
-    // Select the back camera
-    _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInDualCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
-    
-    
-    // obtain device input
+
+    // Select the back camera with Lidar
+    _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInLiDARDepthCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+
+
     NSError *error = nil;
     AVCaptureDeviceInput *captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_captureDevice error:&error];
-    
+
     bool hasDualCamera = true;
+
     if (!captureDeviceInput)
     {
-        NSLog(@"%@", [NSString stringWithFormat:@"Unable to obtain capture device input, error: %@", error]);
-        hasDualCamera = false;
-        _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+        NSLog(@"%@", [NSString stringWithFormat:@"Unable to obtain lidar capture device input, error: %@", error]);
+
+        // Select the back camera with Dual Camera
+        _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInDualCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+
         captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_captureDevice error:&error];
+
         if (!captureDeviceInput)
         {
-            NSLog(@"%@", [NSString stringWithFormat:@"Unable to obtain capture device input, error: %@", error]);
-            return;
+            NSLog(@"%@", [NSString stringWithFormat:@"Unable to obtain dual cam capture device input, error: %@", error]);
+            hasDualCamera = false;
+
+            // Just use camera
+            _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+
+            if (!captureDeviceInput)
+            {
+                NSLog(@"%@", [NSString stringWithFormat:@"Unable to obtain capture device input, error: %@", error]);
+                return;
+            }
         }
     }
-    
-    
     
     
     // create the capture session
@@ -140,9 +148,12 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
     [_captureSession commitConfiguration];
     
     [_previewView setSession:_captureSession];
-    
-    // then start everything
-    [_captureSession startRunning];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // then start everything
+        [self->_captureSession startRunning];
+    });
+
 }
 
 -(void)stopDepthSensor {
