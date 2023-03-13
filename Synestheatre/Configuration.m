@@ -250,87 +250,70 @@ return false;
     NSString* max_depth_vol = _syntJsonDic[@"max_depth_vol"];
     
     if (horizontal_focus != nil){
-        NSLog(@"Over-writing horizontal focus");
         _horizontalFocus = [horizontal_focus floatValue];
     }
     
     if (vertical_focus != nil) {
-        NSLog(@"Over-writing vertical focus");
         _verticalFocus = [vertical_focus floatValue];
     }
     
     if (horizontal_offset != nil) {
-        NSLog(@"Over-writing horizontal offset");
         _horizontalTimingOffset = [horizontal_offset floatValue];
     }
     
     if (vertical_offset != nil) {
-        NSLog(@"Over-writing vertical offset");
         _verticalTimingOffset = [vertical_offset floatValue];
     }
     
     if (window_width != nil) {
-        NSLog(@"Over-writing window width");
         _depthDataWindowWidth = [window_width floatValue];
     }
     
     if (window_height != nil) {
-        NSLog(@"Over-writing window height");
         _depthDataWindowHeight = [window_height floatValue];
     }
     
     if (heartbeat_interval != nil) {
-        NSLog(@"Over-writing heartbeat interval");
         _heartbeatInterval = [heartbeat_interval floatValue];
     }
     
     if (depth_range != nil) {
-        NSLog(@"Over-writing depth range");
         _depthRange = [depth_range floatValue];
     }
     
     if (depth_distance != nil) {
-        NSLog(@"Over-writing depth distance");
         _depthDistance = [depth_distance floatValue];
     }
     
     if (depth_mode != nil) {
-        NSLog(@"Over-writing depth mode");
         _depthMode = [depth_mode boolValue];
     }
     
     if (pan_gesture != nil) {
-        NSLog(@"Over-writing pan gesture");
         _panGesture = pan_gesture;
     }
     
     if (two_finger_gesture != nil) {
-        NSLog(@"Over-writing two finger gesture");
         _twoFingerGesture = two_finger_gesture;
     }
     
     if (pinch_gesture != nil) {
-        NSLog(@"Over-writing pinch gesture");
         _pinchGesture  = pinch_gesture;
     }
     
     if (vol_source != nil) {
-        NSLog(@"Over-writing vol source");
         _volSource = vol_source;
     }
     
     if (default_depth != nil) {
-        NSLog(@"Over-writing default depth");
         _defaultDepth = [default_depth floatValue];
     }
     
     if (exponential_loudness != nil) {
-        NSLog(@"Over writing exponetial loudness");
         _exponentialLoudness = [exponential_loudness boolValue];
     }
     
     if (max_depth_vol != nil) {
-        NSLog(@"Over writing max deoth vol");
         _maxDepthVolume = [max_depth_vol floatValue];
     }
     
