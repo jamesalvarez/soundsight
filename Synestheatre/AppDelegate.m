@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Prevent app being launched in the background when structure sensor is launched
+    // Prevent app being launched in the background
     if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground)
     {
         NSLog(@"iOS launched %@ in the background. This app is not designed to be launched in the background, so it will exit peacefully.",

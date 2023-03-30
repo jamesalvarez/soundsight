@@ -26,5 +26,5 @@
 "product_identifier" : "com.soundsight.beach_chill",
 "full_name":"Song Slice Beach Chill",
 "short_description":"Musical track stacked in a central column",
-"description":"Hear the beach come to life using this song slice! A central vertical slice of the camera feed controls all the instruments that together make a chill beach song. Ambient Synth is at the top of the slice, while chimes, claps, and beach waves control the middle, and finally drumbeats are at the bottom. Sweep the camera across a scene to see what musical sounds they trigger. Works best with the plugin 3D Occipital Structure Sensor, when you use that, just sweep the sensor left and right to indicate the presence of nearby objects with music!"
+"description":"Hear the beach come to life using this song slice! A central vertical slice of the camera feed controls all the instruments that together make a chill beach song. Ambient Synth is at the top of the slice, while chimes, claps, and beach waves control the middle, and finally drumbeats are at the bottom. Sweep the camera across a scene to see what musical sounds they trigger."
 }

@@ -8,7 +8,6 @@
 
 #import "SensorManager.h"
 
-#import "StructureSensorDepthSensor.h"
 #import "DualCameraDepthSensor.h"
 #import "SynestheatreMain.h"
 #import "DepthSensor.h"
@@ -40,8 +39,6 @@
 
     if ([sensorType isEqualToString:@"cam"]){
         depthSensor = [[DualCameraDepthSensor alloc] init];
-    } else if ([sensorType isEqualToString:@"structure"]){
-        depthSensor = [[StructureSensorDepthSensor alloc] init];
     }  else { // auto mode is default
         depthSensor = [self getAutoSensor];
     }
@@ -56,7 +53,6 @@
     
 }
 
-// We have to do this since Flir keeps crashing when plugging in structure sensor
 - (id<DepthSensor>) getAutoSensor {
     
     return [[DualCameraDepthSensor alloc] init];
@@ -67,13 +63,9 @@
     if ([accessories count] == 0) {
         return [[DualCameraDepthSensor alloc] init];
     }
-    
-    EAAccessory *accessory = accessories[0];
-    
-    if ([[accessory name] isEqualToString:@"Structure Sensor"]) {
-        return [[StructureSensorDepthSensor alloc] init];
-    }
-    
+
+    // Currently there are no other sensors this version supports, but otherwise here they would go.
+
     // Fail safe
     return [[DualCameraDepthSensor alloc] init];
 }

@@ -44,13 +44,13 @@ static const Colour ColourBlack = {0,0,0};
 @property (nonatomic, copy) void (^newDataBlock)(void);
 
 /**
- *  Starts the structure sensor
+ *  Starts the sensor
  */
 -(void)startDepthSensor;
 
 
 /**
- *  Stops the structure sensor
+ *  Stops the sensor
  */
 -(void)stopDepthSensor;
 

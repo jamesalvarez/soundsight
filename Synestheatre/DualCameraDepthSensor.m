@@ -36,7 +36,7 @@
 }
 
 /**
- *  Starts the structure sensor
+ *  Starts the sensor
  */
 -(void)startDepthSensor {
     
@@ -47,7 +47,7 @@
 
 
 /**
- *  Stops the structure sensor
+ *  Stops the sensor
  */
 -(void)stopDepthSensor {
     [_cameraManager stopDepthSensor];

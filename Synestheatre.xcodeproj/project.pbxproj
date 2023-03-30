@@ -10,9 +10,7 @@
 		1A1093852111E8F900FEACC8 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1093842111E8F900FEACC8 /* Toast.m */; };
 		1A1498D9233E58450035EA18 /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1498D8233E58450035EA18 /* PreviewView.m */; };
 		1A19B1E71D8C22F00057689F /* GestureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A19B1E61D8C22F00057689F /* GestureController.m */; };
-		1A19C9B71D64679D007EB649 /* StructureSensorDepthSensor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1A19C9B61D64679D007EB649 /* StructureSensorDepthSensor.mm */; };
 		1A1EE7531E7AAA8600D4F8B9 /* TransparentLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1EE7521E7AAA8600D4F8B9 /* TransparentLabelView.m */; };
-		1A23C1B021E89C7800E0CDBA /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A23C1AF21E89C7800E0CDBA /* opencv2.framework */; };
 		1A23C1B921F0E7DB00E0CDBA /* SensorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */; };
 		1A310DA921EF89DA00753192 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A310DA821EF89DA00753192 /* AssetsLibrary.framework */; };
 		1A3573582204567D00FFEFB8 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3573572204567D00FFEFB8 /* CameraManager.m */; };
@@ -36,7 +34,6 @@
 		1A3D330A1D5C8503000BB2C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3D32FD1D5C8503000BB2C5 /* QuartzCore.framework */; };
 		1A3D330B1D5C8503000BB2C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3D32FE1D5C8503000BB2C5 /* UIKit.framework */; };
 		1A3D33101D5C8587000BB2C5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3D330C1D5C8522000BB2C5 /* libz.tbd */; };
-		1A3D33141D5C8798000BB2C5 /* Structure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3D33131D5C8798000BB2C5 /* Structure.framework */; };
 		1A3D33371D5CB3FA000BB2C5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3D33361D5CB3FA000BB2C5 /* AudioToolbox.framework */; };
 		1A3D333A1D5CB528000BB2C5 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D33391D5CB528000BB2C5 /* AudioController.m */; };
 		1A4FD09F211C67BF0076EBC5 /* Synestheatre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FD09E211C67BF0076EBC5 /* Synestheatre.storyboard */; };
@@ -93,11 +90,8 @@
 		1A1498D8233E58450035EA18 /* PreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
 		1A19B1E51D8C22F00057689F /* GestureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureController.h; sourceTree = "<group>"; };
 		1A19B1E61D8C22F00057689F /* GestureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureController.m; sourceTree = "<group>"; };
-		1A19C9B51D64679D007EB649 /* StructureSensorDepthSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructureSensorDepthSensor.h; sourceTree = "<group>"; };
-		1A19C9B61D64679D007EB649 /* StructureSensorDepthSensor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StructureSensorDepthSensor.mm; sourceTree = "<group>"; };
 		1A1EE7511E7AAA8600D4F8B9 /* TransparentLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentLabelView.h; sourceTree = "<group>"; };
 		1A1EE7521E7AAA8600D4F8B9 /* TransparentLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentLabelView.m; sourceTree = "<group>"; };
-		1A23C1AF21E89C7800E0CDBA /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Synestheatre/opencv2.framework; sourceTree = "<group>"; };
 		1A23C1B721F0E7DB00E0CDBA /* SensorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorManager.h; sourceTree = "<group>"; };
 		1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorManager.m; sourceTree = "<group>"; };
 		1A3073DA29719FAE00B8AFE9 /* Synestheatre-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Synestheatre-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -131,7 +125,6 @@
 		1A3D330C1D5C8522000BB2C5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1A3D330E1D5C8564000BB2C5 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
 		1A3D33111D5C8597000BB2C5 /* Synestheatre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Synestheatre.entitlements; sourceTree = "<group>"; };
-		1A3D33131D5C8798000BB2C5 /* Structure.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Structure.framework; path = Synestheatre/Frameworks/Structure.framework; sourceTree = "<group>"; };
 		1A3D33151D5C8827000BB2C5 /* Synestheatre-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Synestheatre-Prefix.pch"; sourceTree = "<group>"; };
 		1A3D33221D5C8A5F000BB2C5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1A3D33361D5CB3FA000BB2C5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -210,12 +203,10 @@
 				1AD1AF2A1D82255C00698CD8 /* CoreFoundation.framework in Frameworks */,
 				1A3D33371D5CB3FA000BB2C5 /* AudioToolbox.framework in Frameworks */,
 				1A3D33081D5C8503000BB2C5 /* Metal.framework in Frameworks */,
-				1A3D33141D5C8798000BB2C5 /* Structure.framework in Frameworks */,
 				1A3D33101D5C8587000BB2C5 /* libz.tbd in Frameworks */,
 				1A3D33041D5C8503000BB2C5 /* CoreMotion.framework in Frameworks */,
 				1A3D330A1D5C8503000BB2C5 /* QuartzCore.framework in Frameworks */,
 				1A3D33061D5C8503000BB2C5 /* Foundation.framework in Frameworks */,
-				1A23C1B021E89C7800E0CDBA /* opencv2.framework in Frameworks */,
 				1A3D33001D5C8503000BB2C5 /* AVFoundation.framework in Frameworks */,
 				1A3D32FF1D5C8503000BB2C5 /* Accelerate.framework in Frameworks */,
 				1A3D33091D5C8503000BB2C5 /* OpenGLES.framework in Frameworks */,
@@ -286,8 +277,6 @@
 				1AC5B72A2108AB97002142F2 /* DepthSensor.h */,
 				1AC5B7252108827C002142F2 /* DualCameraDepthSensor.h */,
 				1AC5B728210886E3002142F2 /* DualCameraDepthSensor.m */,
-				1A19C9B51D64679D007EB649 /* StructureSensorDepthSensor.h */,
-				1A19C9B61D64679D007EB649 /* StructureSensorDepthSensor.mm */,
 				1A3573562204567D00FFEFB8 /* CameraManager.h */,
 				1A3573572204567D00FFEFB8 /* CameraManager.m */,
 				1A3073DA29719FAE00B8AFE9 /* Synestheatre-Bridging-Header.h */,
@@ -396,13 +385,11 @@
 			isa = PBXGroup;
 			children = (
 				1AAE91DD2362F958004740EF /* StoreKit.framework */,
-				1A23C1AF21E89C7800E0CDBA /* opencv2.framework */,
 				1A310DA821EF89DA00753192 /* AssetsLibrary.framework */,
 				1AD1AF2B1D82257400698CD8 /* CoreAudio.framework */,
 				1AD1AF291D82255C00698CD8 /* CoreFoundation.framework */,
 				1A3D33361D5CB3FA000BB2C5 /* AudioToolbox.framework */,
 				1A3D33221D5C8A5F000BB2C5 /* CoreVideo.framework */,
-				1A3D33131D5C8798000BB2C5 /* Structure.framework */,
 				1A3D330E1D5C8564000BB2C5 /* libz.1.dylib */,
 				1A3D330C1D5C8522000BB2C5 /* libz.tbd */,
 				1A3D32F21D5C8503000BB2C5 /* Accelerate.framework */,
@@ -541,7 +528,6 @@
 				1A1EE7531E7AAA8600D4F8B9 /* TransparentLabelView.m in Sources */,
 				1A3D333A1D5CB528000BB2C5 /* AudioController.m in Sources */,
 				1A3899E322D76E89005238F7 /* PitchPreProcessor.m in Sources */,
-				1A19C9B71D64679D007EB649 /* StructureSensorDepthSensor.mm in Sources */,
 				1A3D32DD1D5C840B000BB2C5 /* main.m in Sources */,
 				1ABD437422ED932B0052508F /* StartViewController.m in Sources */,
 				1AAE91E4236323D0004740EF /* IAPHelper.m in Sources */,
@@ -668,7 +654,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7M9C479L4K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -707,7 +693,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7M9C479L4K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
