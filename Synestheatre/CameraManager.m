@@ -52,7 +52,6 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
     // Select the back camera with Lidar
     _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInLiDARDepthCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
 
-
     NSError *error = nil;
     AVCaptureDeviceInput *captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_captureDevice error:&error];
 
@@ -73,7 +72,9 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
             hasDualCamera = false;
 
             // Just use camera
-            _captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+            _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+
+            captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_captureDevice error:&error];
 
             if (!captureDeviceInput)
             {

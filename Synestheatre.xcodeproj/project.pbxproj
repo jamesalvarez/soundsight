@@ -94,6 +94,7 @@
 		1A1EE7521E7AAA8600D4F8B9 /* TransparentLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentLabelView.m; sourceTree = "<group>"; };
 		1A23C1B721F0E7DB00E0CDBA /* SensorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorManager.h; sourceTree = "<group>"; };
 		1A23C1B821F0E7DB00E0CDBA /* SensorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorManager.m; sourceTree = "<group>"; };
+		1A24576329F2E77D00BB4AF0 /* Soundsight.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = Soundsight.storekit; path = Synestheatre/Soundsight.storekit; sourceTree = "<group>"; };
 		1A3073DA29719FAE00B8AFE9 /* Synestheatre-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Synestheatre-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A310DA821EF89DA00753192 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1A3573562204567D00FFEFB8 /* CameraManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraManager.h; sourceTree = "<group>"; };
@@ -324,6 +325,7 @@
 		1A3D32CF1D5C840B000BB2C5 = {
 			isa = PBXGroup;
 			children = (
+				1A24576329F2E77D00BB4AF0 /* Soundsight.storekit */,
 				1A3D33121D5C85A1000BB2C5 /* Frameworks */,
 				1A3D32DA1D5C840B000BB2C5 /* Synestheatre */,
 				1A3D32D91D5C840B000BB2C5 /* Products */,
@@ -654,7 +656,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 7M9C479L4K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -675,6 +677,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesalvarez.soundsight;
 				PRODUCT_NAME = SoundSight;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Synestheatre/Synestheatre-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -693,7 +698,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 7M9C479L4K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -717,6 +722,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesalvarez.soundsight;
 				PRODUCT_NAME = SoundSight;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Synestheatre/Synestheatre-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

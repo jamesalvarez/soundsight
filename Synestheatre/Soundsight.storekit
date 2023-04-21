@@ -1,0 +1,50 @@
+{
+  "identifier" : "6431F1DA",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6446997943",
+      "localizations" : [
+        {
+          "description" : "The shape of light is communicated by tones.",
+          "displayName" : "Scientific Tones",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.soundsight.scientifictones",
+      "referenceName" : "com.soundsight.scientifictones",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6446997883",
+      "localizations" : [
+        {
+          "description" : "Chill out with some more beach tunes!",
+          "displayName" : "Song Slice Skylarks",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.soundsight.skylarks",
+      "referenceName" : "com.soundsight.skylarks",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6446253295",
+    "_developerTeamID" : "7M9C479L4K",
+    "_lastSynchronizedDate" : 703784832.21793699
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

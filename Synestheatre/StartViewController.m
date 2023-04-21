@@ -58,11 +58,47 @@
     [AppDelegate restrictOrientation];
 }
 
+-(bool)hasADepthCam {
+    AVCaptureDeviceDiscoverySession *discoverySession = [AVCaptureDeviceDiscoverySession
+                                                         discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera, AVCaptureDeviceTypeBuiltInTrueDepthCamera, AVCaptureDeviceTypeBuiltInTelephotoCamera, AVCaptureDeviceTypeBuiltInUltraWideCamera, AVCaptureDeviceTypeBuiltInDualCamera, AVCaptureDeviceTypeBuiltInTripleCamera]
+                                                         mediaType:AVMediaTypeVideo
+                                                         position:AVCaptureDevicePositionUnspecified];
+
+    NSArray *devices = discoverySession.devices;
+
+    BOOL hasLiDAR = NO;
+    BOOL hasDualCamera = NO;
+
+    for (AVCaptureDevice *device in devices) {
+        if ([device.deviceType isEqualToString:AVCaptureDeviceTypeBuiltInLiDARDepthCamera]) {
+            hasLiDAR = YES;
+        } else if ([device.deviceType isEqualToString:AVCaptureDeviceTypeBuiltInDualCamera]) {
+            hasDualCamera = YES;
+        } else if ([device.deviceType isEqualToString:AVCaptureDeviceTypeBuiltInTripleCamera]) {
+            hasDualCamera = YES;
+            hasLiDAR = YES;
+        }
+    }
+
+    if (hasLiDAR) {
+        NSLog(@"This device has a LiDAR camera");
+    }
+
+    if (hasDualCamera) {
+        NSLog(@"This device has a dual camera");
+    }
+
+    return hasLiDAR || hasDualCamera;
+
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[self navigationController] setNavigationBarHidden:true];
     static bool SHOWEDDISCLAIMER = false;
+
+
+    
 
     
     // Do setup in bg and display spinner whilst it happens    
@@ -191,9 +227,15 @@
 
 - (void)showDisclaimerDialog {
 
+    NSString* message = @"Soundsight is not a substitute for other assistive devices or mobility aids and you need to exercise your own good judgment as to when to use it.  We recommend using bone-conducting headphones so that the Soundsight augments rather than blocks natural hearing.";
+
+    if (![self hasADepthCam]) {
+        message = @"WARNING: The device does not have a depth camera, and will not function correctly!  Soundsight is not a substitute for other assistive devices or mobility aids and you need to exercise your own good judgment as to when to use it.  We recommend using bone-conducting headphones so that the Soundsight augments rather than blocks natural hearing.";
+    }
+
     UIAlertController* alert = [UIAlertController
           alertControllerWithTitle:@"Disclaimer"
-          message:@"Soundsight is not a substitute for other assistive devices or mobility aids and you need to exercise your own good judgment as to when to use it.  We recommend using bone-conducting headphones so that the Soundsight augments rather than blocks natural hearing."
+          message: message
           preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction* defaultAction = [UIAlertAction
