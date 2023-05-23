@@ -221,6 +221,11 @@
     [self showDisclaimerDialog];
 }
 
+- (IBAction)restorePurchasesTouch:(id)sender {
+
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 - (IBAction)startButtonTouch:(id)sender {
     NSLog(@"start");
 }
