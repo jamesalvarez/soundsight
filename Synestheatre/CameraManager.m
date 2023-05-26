@@ -177,7 +177,8 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
     if (status == AVAuthorizationStatusAuthorized)
         return true;
     if (status == AVAuthorizationStatusDenied) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options: @{} completionHandler:nil];
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options: @{} completionHandler:nil];
+        [Toast makeToast:@"This app needs camera permission to work!"];
         return false;
     }
     
@@ -186,8 +187,10 @@ void BufferReleaseCallback(void *releaseRefCon, const void *baseAddress){
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
                      completionHandler:^(BOOL granted) {
                          if (!granted) {
-                             NSLog(@"User denied camera access!");
-                             [Toast makeToast:@"Needs camera permission!"];
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 NSLog(@"User denied camera access!");
+
+                             });
                          }
                      }];
     
